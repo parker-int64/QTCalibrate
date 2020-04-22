@@ -1,0 +1,13 @@
+<RCC>
+  <qresource prefix="ico">
+    <file>uiComponents/upArrPressed.png</file>
+    <file>uiComponents/downArrPressed.png</file>
+    <file>uiComponents/downArr.png</file>
+    <file>uiComponents/upArr.png</file>
+    <file>uiComponents/radiochecked.png</file>
+    <file>uiComponents/radiounchecked.png</file>
+    <file>uiComponents/checked.png</file>
+    <file>uiComponents/unchecked.png</file>
+    <file>uiComponents/camera.ico</file>
+  </qresource>
+</RCC>

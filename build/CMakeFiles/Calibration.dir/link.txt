@@ -1,0 +1,3 @@
+C:\Development\cmake-3.16.0-rc2-win64-x64\bin\cmake.exe -E remove -f CMakeFiles\Calibration.dir/objects.a
+C:\Development\mingw64\x86_64-w64-mingw32\bin\ar.exe cr CMakeFiles\Calibration.dir/objects.a @CMakeFiles\Calibration.dir\objects1.rsp
+C:\Development\mingw64\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\Calibration.dir/objects.a -Wl,--no-whole-archive  -o ..\bin\Calibration.exe -Wl,--out-implib,..\bin\libCalibration.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Calibration.dir\linklibs.rsp

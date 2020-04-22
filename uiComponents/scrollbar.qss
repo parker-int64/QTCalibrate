@@ -1,0 +1,34 @@
+QScrollBar:vertical{
+    border: none;
+    margin: 0px,0px,0px,0px;
+    border-radius: 2px;
+    background: rgb(241,241,241);
+}
+QScrollBar:vertical:hover{
+    margin: 0px,0px,0px,0px;
+}
+QScrollBar::handle:vertical{
+    max-width: 2px;
+    background: rgb(192,188,176);
+    height: 40px;
+    border-radius: 4px;
+}
+QScrollBar::handle:vertical:hover{
+    background-color: rgb(145,143,138);
+}
+QScrollBar::add-line:vertical{
+    height:0px;
+    background-color: transparent;
+    subcontrol-position:bottom;
+}
+QScrollBar::sub-line:vertical{
+    height:0px;
+    background-color: transparent;
+    subcontrol-position:top;
+}
+QScrollBar::add-page:vertical{
+    background-color: rgba(50, 50, 50, 0);
+}
+QScrollBar::sub-page:vertical{
+    background-color: rgba(50, 50, 50, 0);
+}
