@@ -3,4 +3,4 @@
 可以正常运行了，但是标定结果误差很大  
 应该是运行时设置某些设置不正确  
 
-![](https://raw.githubusercontent.com/parker-int64//QTCalibrate/master/data/running.gif)
+![](https://github.com/parker-int64/raw/QTCalibrate/master/data/running.gif)
