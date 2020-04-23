@@ -5,7 +5,7 @@
 		<Option title="Calibration"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\Qt\;CMake Files\..\..\..\..\Qt\Qt5.14.2\;CMake Files\..\..\..\..\Qt\Qt5.14.2\5.14.2\;CMake Files\..\..\..\..\Qt\Qt5.14.2\5.14.2\mingw73_64\;CMake Files\..\..\..\..\Qt\Qt5.14.2\5.14.2\mingw73_64\lib\;CMake Files\..\..\..\..\Qt\Qt5.14.2\5.14.2\mingw73_64\lib\cmake\;CMake Files\..\..\..\..\Qt\Qt5.14.2\5.14.2\mingw73_64\lib\cmake\Qt5\;CMake Files\..\..\..\..\Qt\Qt5.14.2\5.14.2\mingw73_64\lib\cmake\Qt5Widgets\;CMake Files\..\..\..\..\Qt\Qt5.14.2\5.14.2\mingw73_64\lib\cmake\Qt5Gui\;CMake Files\..\..\..\..\Qt\Qt5.14.2\5.14.2\mingw73_64\lib\cmake\Qt5Core\;CMake Files\..\..\..\..\Qt\Qt5.14.2\5.14.2\mingw73_64\lib\cmake\Qt5LinguistTools\;CMake Files\..\..\..\..\Development\;CMake Files\..\..\..\..\Development\opencv411-Seperate-Module\;CMake Files\..\..\..\..\Development\opencv411-Seperate-Module\x64\;CMake Files\..\..\..\..\Development\opencv411-Seperate-Module\x64\mingw\;CMake Files\..\..\..\..\Development\opencv411-Seperate-Module\x64\mingw\lib\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\Qt\;CMake Files\..\..\..\..\Qt\Qt5.14.2\;CMake Files\..\..\..\..\Qt\Qt5.14.2\5.14.2\;CMake Files\..\..\..\..\Qt\Qt5.14.2\5.14.2\mingw73_64\;CMake Files\..\..\..\..\Qt\Qt5.14.2\5.14.2\mingw73_64\lib\;CMake Files\..\..\..\..\Qt\Qt5.14.2\5.14.2\mingw73_64\lib\cmake\;CMake Files\..\..\..\..\Qt\Qt5.14.2\5.14.2\mingw73_64\lib\cmake\Qt5\;CMake Files\..\..\..\..\Qt\Qt5.14.2\5.14.2\mingw73_64\lib\cmake\Qt5Widgets\;CMake Files\..\..\..\..\Qt\Qt5.14.2\5.14.2\mingw73_64\lib\cmake\Qt5Gui\;CMake Files\..\..\..\..\Qt\Qt5.14.2\5.14.2\mingw73_64\lib\cmake\Qt5Core\;CMake Files\..\..\..\..\Qt\Qt5.14.2\5.14.2\mingw73_64\lib\cmake\Qt5LinguistTools\;CMake Files\..\..\..\..\Development\;CMake Files\..\..\..\..\Development\opencv411\;CMake Files\..\..\..\..\Development\opencv411\x64\;CMake Files\..\..\..\..\Development\opencv411\x64\mingw\;CMake Files\..\..\..\..\Development\opencv411\x64\mingw\lib\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="C:/Users/INTEL/Desktop/Calibration/build-Calibration-Desktop_Qt_5_14_2_MinGW_64_bit-Debug"/>
@@ -31,7 +31,7 @@
 					<Add directory="C:/Users/INTEL/Desktop/Calibration"/>
 					<Add directory="C:/Users/INTEL/Desktop/Calibration/build-Calibration-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/Calibration_autogen/include"/>
 					<Add directory="C:/Users/INTEL/Desktop/Calibration/include"/>
-					<Add directory="C:/Development/opencv411-Seperate-Module/include"/>
+					<Add directory="C:/Development/opencv411/include"/>
 					<Add directory="C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include"/>
 					<Add directory="C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtWidgets"/>
 					<Add directory="C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtGui"/>
@@ -66,7 +66,7 @@
 					<Add directory="C:/Users/INTEL/Desktop/Calibration"/>
 					<Add directory="C:/Users/INTEL/Desktop/Calibration/build-Calibration-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/Calibration_autogen/include"/>
 					<Add directory="C:/Users/INTEL/Desktop/Calibration/include"/>
-					<Add directory="C:/Development/opencv411-Seperate-Module/include"/>
+					<Add directory="C:/Development/opencv411/include"/>
 					<Add directory="C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include"/>
 					<Add directory="C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtWidgets"/>
 					<Add directory="C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtGui"/>
@@ -262,20 +262,20 @@
 		<Unit filename="C:/Users/INTEL/Desktop/Calibration/../../../../Qt/Qt5.14.2/5.14.2/mingw73_64/lib/cmake/Qt5LinguistTools/Qt5LinguistToolsMacros.cmake">
 			<Option virtualFolder="CMake Files\..\..\..\..\Qt\Qt5.14.2\5.14.2\mingw73_64\lib\cmake\Qt5LinguistTools\"/>
 		</Unit>
-		<Unit filename="C:/Users/INTEL/Desktop/Calibration/../../../../Development/opencv411-Seperate-Module/OpenCVConfig-version.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\Development\opencv411-Seperate-Module\"/>
+		<Unit filename="C:/Users/INTEL/Desktop/Calibration/../../../../Development/opencv411/OpenCVConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Development\opencv411\"/>
 		</Unit>
-		<Unit filename="C:/Users/INTEL/Desktop/Calibration/../../../../Development/opencv411-Seperate-Module/OpenCVConfig.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\Development\opencv411-Seperate-Module\"/>
+		<Unit filename="C:/Users/INTEL/Desktop/Calibration/../../../../Development/opencv411/OpenCVConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Development\opencv411\"/>
 		</Unit>
-		<Unit filename="C:/Users/INTEL/Desktop/Calibration/../../../../Development/opencv411-Seperate-Module/x64/mingw/lib/OpenCVConfig.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\Development\opencv411-Seperate-Module\x64\mingw\lib\"/>
+		<Unit filename="C:/Users/INTEL/Desktop/Calibration/../../../../Development/opencv411/x64/mingw/lib/OpenCVConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Development\opencv411\x64\mingw\lib\"/>
 		</Unit>
-		<Unit filename="C:/Users/INTEL/Desktop/Calibration/../../../../Development/opencv411-Seperate-Module/x64/mingw/lib/OpenCVModules-debug.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\Development\opencv411-Seperate-Module\x64\mingw\lib\"/>
+		<Unit filename="C:/Users/INTEL/Desktop/Calibration/../../../../Development/opencv411/x64/mingw/lib/OpenCVModules-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Development\opencv411\x64\mingw\lib\"/>
 		</Unit>
-		<Unit filename="C:/Users/INTEL/Desktop/Calibration/../../../../Development/opencv411-Seperate-Module/x64/mingw/lib/OpenCVModules.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\Development\opencv411-Seperate-Module\x64\mingw\lib\"/>
+		<Unit filename="C:/Users/INTEL/Desktop/Calibration/../../../../Development/opencv411/x64/mingw/lib/OpenCVModules.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\Development\opencv411\x64\mingw\lib\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>963</width>
+    <width>930</width>
     <height>780</height>
    </rect>
   </property>
@@ -24,6 +24,9 @@
        <widget class="QTextBrowser" name="textBrowser">
         <property name="enabled">
          <bool>true</bool>
+        </property>
+        <property name="toolTip">
+         <string extracomment="terminal output"/>
         </property>
         <property name="styleSheet">
          <string notr="true">font: 12pt &quot;Consolas&quot;;</string>
@@ -92,6 +95,39 @@ background-color: rgb(243, 236, 218);</string>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
+        <widget class="QPushButton" name="pushButton_6">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton { 
+	font: 14pt &quot;Microsoft YaHei UI&quot;;
+	border-radius: 3px;
+	background-color: rgb(172, 157, 87);
+	color:rgb(246,245,237); 
+} 
+QPushButton:hover { 
+background-color: rgb(139,126,68); 
+}
+QPushButton:pressed {  
+
+    /* 改变边框风格 */  
+    border-style:inset;  
+
+    /* 使文字有一点移动 */  
+    padding-left:3px;  
+    padding-top:3px;  
+}  </string>
+         </property>
+         <property name="text">
+          <string>ENG/中</string>
+         </property>
+        </widget>
+       </item>
+       <item>
         <spacer name="horizontalSpacer_2">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
@@ -119,11 +155,11 @@ background-color: rgb(243, 236, 218);</string>
           </size>
          </property>
          <property name="toolTip">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Reset all parameters above&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string extracomment="reset the settings">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Reset all parameters above&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton { 
-	font: 10pt &quot;Microsoft YaHei UI&quot;;
+	font: 14pt &quot;Microsoft YaHei UI&quot;;
 	border-radius: 3px;
 	background-color: rgb(172, 157, 87);
 	color:rgb(246,245,237); 
@@ -174,11 +210,11 @@ QPushButton:pressed {
           </size>
          </property>
          <property name="toolTip">
-          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Exit program&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string extracomment="exit the program">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Exit program&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton { 
-	font: 10pt &quot;Microsoft YaHei UI&quot;;
+	font: 14pt &quot;Microsoft YaHei UI&quot;;
 	border-radius: 3px;
 	background-color: rgb(172, 157, 87);
 	color:rgb(246,245,237); 
@@ -305,11 +341,11 @@ background-color: rgb(243, 236, 218);</string>
        </size>
       </property>
       <property name="toolTip">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Start calibrate&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string extracomment="start calibration">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Start calibrate&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton { 
-	font: 10pt &quot;Microsoft YaHei UI&quot;;
+	font: 14pt &quot;Microsoft YaHei UI&quot;;
 	border-radius: 3px;
 	background-color: #4CAF50;; 
     color: white; 
@@ -345,6 +381,9 @@ QPushButton:disabled {
     </item>
     <item row="4" column="1">
      <widget class="QGroupBox" name="verticalGroupBox_5">
+      <property name="toolTip">
+       <string extracomment="you must fill the basic settings to calibrate"/>
+      </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(216,212,196);</string>
       </property>
@@ -408,13 +447,16 @@ background-color: rgb(216,212,196);</string>
        </item>
        <item row="7" column="0">
         <widget class="QLabel" name="label_6">
+         <property name="toolTip">
+          <string extracomment="chess board height"/>
+         </property>
          <property name="styleSheet">
           <string notr="true">font: 75 12pt &quot;Microsoft YaHei UI&quot;;
 color: rgb(150,148,141);
 background-color: rgb(216,212,196);</string>
          </property>
          <property name="text">
-          <string>Height</string>
+          <string>Board Height</string>
          </property>
         </widget>
        </item>
@@ -474,41 +516,6 @@ QRadioButton ,QCheckBox{
          </property>
          <attribute name="buttonGroup">
           <string notr="true">buttonGroup_2</string>
-         </attribute>
-        </widget>
-       </item>
-       <item row="0" column="5">
-        <widget class="QRadioButton" name="radioButton_7">
-         <property name="toolTip">
-          <string extracomment="Calibrate a webcam directly">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Calibrate a webcam directly&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">/*RadioButton样式设置*/
-QRadioButton::indicator { 
-    width: 17px;
-    height: 17px;
-}
-/*单选框未选中样式*/
-QRadioButton::indicator::unchecked {
-	image: url(:/ico/uiComponents/radiounchecked.png);
-}
-/*单选框选中样式*/
-QRadioButton::indicator::checked { 
-	image: url(:/ico/uiComponents/radiochecked.png);
-}
-/*RadioButton和checkbox字体和间距设置*/
-QRadioButton ,QCheckBox{
-	font: 10pt &quot;Microsoft YaHei UI&quot;;
-	color: rgb(150,148,141);
-    spacing: 5px;
-}
-</string>
-         </property>
-         <property name="text">
-          <string>Webcam</string>
-         </property>
-         <attribute name="buttonGroup">
-          <string notr="true">buttonGroup_3</string>
          </attribute>
         </widget>
        </item>
@@ -595,13 +602,16 @@ QSpinBox::down-button:pressed {
        </item>
        <item row="8" column="0">
         <widget class="QLabel" name="label_7">
+         <property name="toolTip">
+          <string extracomment="chess board size"/>
+         </property>
          <property name="styleSheet">
           <string notr="true">font: 75 12pt &quot;Microsoft YaHei UI&quot;;
 color: rgb(150,148,141);
 background-color: rgb(216,212,196);</string>
          </property>
          <property name="text">
-          <string>Size</string>
+          <string>Board Size</string>
          </property>
         </widget>
        </item>
@@ -787,13 +797,16 @@ QRadioButton ,QCheckBox{
            <height>16777215</height>
           </size>
          </property>
+         <property name="toolTip">
+          <string extracomment="chess board width"/>
+         </property>
          <property name="styleSheet">
           <string notr="true">font: 75 12pt &quot;Microsoft YaHei UI&quot;;
 color: rgb(150,148,141);
 background-color: rgb(216,212,196);</string>
          </property>
          <property name="text">
-          <string>Width</string>
+          <string>Board Width</string>
          </property>
         </widget>
        </item>
@@ -831,6 +844,18 @@ QRadioButton ,QCheckBox{
        </item>
        <item row="0" column="4">
         <widget class="QRadioButton" name="radioButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>200</width>
+           <height>16777215</height>
+          </size>
+         </property>
          <property name="toolTip">
           <string extracomment="Calibrate a camera from local picture files.">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Calibrate a camera from local picture files.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
@@ -866,7 +891,7 @@ QRadioButton ,QCheckBox{
 </string>
          </property>
          <property name="text">
-          <string>Local Image Files</string>
+          <string>Image Files </string>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -917,38 +942,6 @@ QRadioButton ,QCheckBox{
          </attribute>
         </widget>
        </item>
-       <item row="0" column="6">
-        <widget class="QRadioButton" name="radioButton_9">
-         <property name="styleSheet">
-          <string notr="true">/*RadioButton样式设置*/
-QRadioButton::indicator { 
-    width: 17px;
-    height: 17px;
-}
-/*单选框未选中样式*/
-QRadioButton::indicator::unchecked {
-	image: url(:/ico/uiComponents/radiounchecked.png);
-}
-/*单选框选中样式*/
-QRadioButton::indicator::checked { 
-	image: url(:/ico/uiComponents/radiochecked.png);
-}
-/*RadioButton和checkbox字体和间距设置*/
-QRadioButton ,QCheckBox{
-	font: 10pt &quot;Microsoft YaHei UI&quot;;
-	color: rgb(150,148,141);
-    spacing: 5px;
-}
-</string>
-         </property>
-         <property name="text">
-          <string>Local Video Files</string>
-         </property>
-         <attribute name="buttonGroup">
-          <string notr="true">buttonGroup_3</string>
-         </attribute>
-        </widget>
-       </item>
       </layout>
      </widget>
     </item>
@@ -969,9 +962,12 @@ QRadioButton ,QCheckBox{
         <height>50</height>
        </size>
       </property>
+      <property name="toolTip">
+       <string extracomment="add the selected images above to imagelist.yaml"/>
+      </property>
       <property name="styleSheet">
        <string notr="true">QPushButton { 
-	font: 10pt &quot;Microsoft YaHei UI&quot;;
+	font: 14pt &quot;Microsoft YaHei UI&quot;;
 	border-radius: 3px;
 	background-color: #4CAF50;; 
     color: white; 
@@ -1001,16 +997,141 @@ QPushButton:disabled {
 }</string>
       </property>
       <property name="text">
-       <string>Add to ImageList.yml</string>
+       <string>Add to Imagelist.yaml</string>
       </property>
      </widget>
     </item>
     <item row="15" column="1">
      <widget class="QGroupBox" name="verticalGroupBox_4">
+      <property name="toolTip">
+       <string comment="some advanced calibrate settings for better result"/>
+      </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(216,212,196);</string>
       </property>
       <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_11">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string extracomment="output file path"/>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font: 75 10pt &quot;Microsoft YaHei UI&quot;;
+color: rgb(150,148,141);
+background-color: rgb(216,212,196);</string>
+         </property>
+         <property name="text">
+          <string>Calibrate File Output</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0">
+        <widget class="QLabel" name="label_15">
+         <property name="toolTip">
+          <string extracomment="write refined 3D object points"/>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font: 75 10pt &quot;Microsoft YaHei UI&quot;;
+color: rgb(150,148,141);
+background-color: rgb(216,212,196);</string>
+         </property>
+         <property name="text">
+          <string>Write Refined 3D Object Points</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_23">
+         <property name="toolTip">
+          <string extracomment="actual distance between top-left and top-right corners of the calibration grid. If this parameter is specified, a more accurate calibration method will be used which may be better "/>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font: 75 10pt &quot;Microsoft YaHei UI&quot;;
+color: rgb(150,148,141);
+background-color: rgb(216,212,196);</string>
+         </property>
+         <property name="text">
+          <string>Distance</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QLineEdit" name="lineEdit">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>200</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(238, 232, 213);
+font: 9pt &quot;Consolas&quot;;</string>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="0">
+        <widget class="QLabel" name="label_18">
+         <property name="toolTip">
+          <string extracomment="fix the principal point at the center"/>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font: 75 10pt &quot;Microsoft YaHei UI&quot;;
+color: rgb(150,148,141);
+background-color: rgb(216,212,196);</string>
+         </property>
+         <property name="text">
+          <string>Fix the Principal Point</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="0">
+        <widget class="QLabel" name="label_19">
+         <property name="toolTip">
+          <string extracomment="flip the captured images around the horizontal axis"/>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font: 75 10pt &quot;Microsoft YaHei UI&quot;;
+color: rgb(150,148,141);
+background-color: rgb(216,212,196);</string>
+         </property>
+         <property name="text">
+          <string>Flip the Captured Images</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_22">
+         <property name="toolTip">
+          <string extracomment="Half of search window for cornerSubPix (11 by default)"/>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font: 75 10pt &quot;Microsoft YaHei UI&quot;;
+color: rgb(150,148,141);
+background-color: rgb(216,212,196);</string>
+         </property>
+         <property name="text">
+          <string>Window Size</string>
+         </property>
+        </widget>
+       </item>
        <item row="0" column="3">
         <widget class="QPushButton" name="pushButton_4">
          <property name="sizePolicy">
@@ -1027,6 +1148,9 @@ QPushButton:disabled {
          </property>
          <property name="cursor">
           <cursorShape>ArrowCursor</cursorShape>
+         </property>
+         <property name="toolTip">
+          <string extracomment="select the camera martix's output path"/>
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton { 
@@ -1060,8 +1184,44 @@ QPushButton:pressed {
          </property>
         </widget>
        </item>
-       <item row="8" column="2">
-        <widget class="QCheckBox" name="checkBox_3">
+       <item row="6" column="0">
+        <widget class="QLabel" name="label_14">
+         <property name="toolTip">
+          <string extracomment="write extrinsic parameters"/>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font: 75 10pt &quot;Microsoft YaHei UI&quot;;
+color: rgb(150,148,141);
+background-color: rgb(216,212,196);</string>
+         </property>
+         <property name="text">
+          <string>Write Extrinsic Parameters</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="0">
+        <widget class="QLabel" name="label_16">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="toolTip">
+          <string extracomment="assume zero tangential distortion"/>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font: 75 10pt &quot;Microsoft YaHei UI&quot;;
+color: rgb(150,148,141);
+background-color: rgb(216,212,196);</string>
+         </property>
+         <property name="text">
+          <string>Assume Zero Tangential Distortion</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="2">
+        <widget class="QCheckBox" name="checkBox_2">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -1091,135 +1251,78 @@ QCheckBox::indicator::checked {
          </property>
          <property name="text">
           <string/>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="2">
-        <widget class="QSpinBox" name="spinBox_4">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>50</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QSpinBox {
-	padding-right: 15px; /* make room for the arrows */
-	border:1px solid black;
-	border-radius:5px;
-	background-color: rgb(238, 232, 213);
-	font: 10pt &quot;Microsoft YaHei UI&quot;;
-}
-
-QSpinBox::up-button {
-	image: url(:/ico/uiComponents/upArr.png);
-}
-
-QSpinBox::down-button {
-	image: url(:/ico/uiComponents/downArr.png);
-}
-
-QSpinBox::up-button:pressed {
-	image: url(:/ico/uiComponents/upArrPressed.png);
-	margin-top:3px;
-}
-
-QSpinBox::down-button:pressed {
-	image: url(:/ico/uiComponents/downArrPressed.png);
-	margin-bottom:3px;
-}</string>
-         </property>
-        </widget>
-       </item>
-       <item row="14" column="2">
-        <widget class="QCheckBox" name="checkBox_9">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>15</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QCheckBox{
-    spacing: 5px;
-    font-size: 15px;
-	font: 10pt &quot;Microsoft YaHei UI&quot;;
-	color: rgb(150,148,141);
-}
-/*checkbox样式设置*/
-QCheckBox::indicator { 
-    width: 26px;
-    height: 50px;
-}
-/*未选中*/
-QCheckBox::indicator::unchecked {   
-    image: url(:/ico/uiComponents/unchecked.png);
-}
-/*选中*/
-QCheckBox::indicator::checked { 
-    image: url(:/ico/uiComponents/checked.png);
-}</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item row="12" column="0">
-        <widget class="QLabel" name="label_18">
-         <property name="styleSheet">
-          <string notr="true">font: 75 10pt &quot;Microsoft YaHei UI&quot;;
-color: rgb(150,148,141);
-background-color: rgb(216,212,196);</string>
-         </property>
-         <property name="text">
-          <string>Fix the Principal Point</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0">
-        <widget class="QLabel" name="label_11">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">font: 75 10pt &quot;Microsoft YaHei UI&quot;;
-color: rgb(150,148,141);
-background-color: rgb(216,212,196);</string>
-         </property>
-         <property name="text">
-          <string>Calibrate File Output</string>
-         </property>
-        </widget>
-       </item>
-       <item row="11" column="0">
-        <widget class="QLabel" name="label_17">
-         <property name="styleSheet">
-          <string notr="true">font: 75 10pt &quot;Microsoft YaHei UI&quot;;
-color: rgb(150,148,141);
-background-color: rgb(216,212,196);</string>
-         </property>
-         <property name="text">
-          <string>Fix Aspect Ratio(fx/fy)</string>
          </property>
         </widget>
        </item>
        <item row="11" column="2">
+        <widget class="QCheckBox" name="checkBox_8">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>15</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QCheckBox{
+    spacing: 5px;
+    font-size: 15px;
+	font: 10pt &quot;Microsoft YaHei UI&quot;;
+	color: rgb(150,148,141);
+}
+/*checkbox样式设置*/
+QCheckBox::indicator { 
+    width: 26px;
+    height: 50px;
+}
+/*未选中*/
+QCheckBox::indicator::unchecked {   
+    image: url(:/ico/uiComponents/unchecked.png);
+}
+/*选中*/
+QCheckBox::indicator::checked { 
+    image: url(:/ico/uiComponents/checked.png);
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="2">
+        <widget class="QCheckBox" name="checkBox_7">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>15</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QCheckBox{
+    spacing: 5px;
+    font-size: 15px;
+	font: 10pt &quot;Microsoft YaHei UI&quot;;
+	color: rgb(150,148,141);
+}
+/*checkbox样式设置*/
+QCheckBox::indicator { 
+    width: 26px;
+    height: 50px;
+}
+/*未选中*/
+QCheckBox::indicator::unchecked {   
+    image: url(:/ico/uiComponents/unchecked.png);
+}
+/*选中*/
+QCheckBox::indicator::checked { 
+    image: url(:/ico/uiComponents/checked.png);
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="2">
         <widget class="QDoubleSpinBox" name="doubleSpinBox_2">
          <property name="maximumSize">
           <size>
@@ -1256,75 +1359,7 @@ QDoubleSpinBox::down-button:pressed {
          </property>
         </widget>
        </item>
-       <item row="0" column="2">
-        <widget class="QLineEdit" name="lineEdit">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>200</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(238, 232, 213);</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="2">
-        <widget class="QSpinBox" name="spinBox_3">
-         <property name="maximumSize">
-          <size>
-           <width>50</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QSpinBox {
-	padding-right: 15px; /* make room for the arrows */
-	border:1px solid black;
-	border-radius:5px;
-	background-color: rgb(238, 232, 213);
-	font: 10pt &quot;Microsoft YaHei UI&quot;;
-}
-
-QSpinBox::up-button {
-	image: url(:/ico/uiComponents/upArr.png);
-}
-
-QSpinBox::down-button {
-	image: url(:/ico/uiComponents/downArr.png);
-}
-
-QSpinBox::up-button:pressed {
-	image: url(:/ico/uiComponents/upArrPressed.png);
-	margin-top:3px;
-}
-
-QSpinBox::down-button:pressed {
-	image: url(:/ico/uiComponents/downArrPressed.png);
-	margin-bottom:3px;
-}</string>
-         </property>
-        </widget>
-       </item>
-       <item row="9" column="0">
-        <widget class="QLabel" name="label_15">
-         <property name="styleSheet">
-          <string notr="true">font: 75 10pt &quot;Microsoft YaHei UI&quot;;
-color: rgb(150,148,141);
-background-color: rgb(216,212,196);</string>
-         </property>
-         <property name="text">
-          <string>Write Refined 3D Object Points</string>
-         </property>
-        </widget>
-       </item>
-       <item row="10" column="2">
+       <item row="8" column="2">
         <widget class="QCheckBox" name="checkBox_5">
          <property name="maximumSize">
           <size>
@@ -1358,8 +1393,26 @@ QCheckBox::indicator::checked {
          </property>
         </widget>
        </item>
-       <item row="6" column="0">
+       <item row="9" column="0">
+        <widget class="QLabel" name="label_17">
+         <property name="toolTip">
+          <string extracomment="fix aspect ratio (fx/fy)"/>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font: 75 10pt &quot;Microsoft YaHei UI&quot;;
+color: rgb(150,148,141);
+background-color: rgb(216,212,196);</string>
+         </property>
+         <property name="text">
+          <string>Fix Aspect Ratio(fx/fy)</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
         <widget class="QLabel" name="label_13">
+         <property name="toolTip">
+          <string extracomment="write detected feature points"/>
+         </property>
          <property name="styleSheet">
           <string notr="true">font: 75 10pt &quot;Microsoft YaHei UI&quot;;
 color: rgb(150,148,141);
@@ -1370,44 +1423,8 @@ background-color: rgb(216,212,196);</string>
          </property>
         </widget>
        </item>
-       <item row="5" column="0">
-        <widget class="QLabel" name="label_23">
-         <property name="styleSheet">
-          <string notr="true">font: 75 10pt &quot;Microsoft YaHei UI&quot;;
-color: rgb(150,148,141);
-background-color: rgb(216,212,196);</string>
-         </property>
-         <property name="text">
-          <string>Actual Distance</string>
-         </property>
-        </widget>
-       </item>
-       <item row="13" column="0">
-        <widget class="QLabel" name="label_19">
-         <property name="styleSheet">
-          <string notr="true">font: 75 10pt &quot;Microsoft YaHei UI&quot;;
-color: rgb(150,148,141);
-background-color: rgb(216,212,196);</string>
-         </property>
-         <property name="text">
-          <string>Flip the Captured Images</string>
-         </property>
-        </widget>
-       </item>
-       <item row="10" column="0">
-        <widget class="QLabel" name="label_16">
-         <property name="styleSheet">
-          <string notr="true">font: 75 10pt &quot;Microsoft YaHei UI&quot;;
-color: rgb(150,148,141);
-background-color: rgb(216,212,196);</string>
-         </property>
-         <property name="text">
-          <string>Assume Zero Tangential Distortion</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="2">
-        <widget class="QCheckBox" name="checkBox_2">
+       <item row="12" column="2">
+        <widget class="QCheckBox" name="checkBox_9">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -1440,114 +1457,7 @@ QCheckBox::indicator::checked {
          </property>
         </widget>
        </item>
-       <item row="13" column="2">
-        <widget class="QCheckBox" name="checkBox_8">
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>15</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QCheckBox{
-    spacing: 5px;
-    font-size: 15px;
-	font: 10pt &quot;Microsoft YaHei UI&quot;;
-	color: rgb(150,148,141);
-}
-/*checkbox样式设置*/
-QCheckBox::indicator { 
-    width: 26px;
-    height: 50px;
-}
-/*未选中*/
-QCheckBox::indicator::unchecked {   
-    image: url(:/ico/uiComponents/unchecked.png);
-}
-/*选中*/
-QCheckBox::indicator::checked { 
-    image: url(:/ico/uiComponents/checked.png);
-}</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="0">
-        <widget class="QLabel" name="label_22">
-         <property name="styleSheet">
-          <string notr="true">font: 75 10pt &quot;Microsoft YaHei UI&quot;;
-color: rgb(150,148,141);
-background-color: rgb(216,212,196);</string>
-         </property>
-         <property name="text">
-          <string>Half of Search</string>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="0">
-        <widget class="QLabel" name="label_14">
-         <property name="styleSheet">
-          <string notr="true">font: 75 10pt &quot;Microsoft YaHei UI&quot;;
-color: rgb(150,148,141);
-background-color: rgb(216,212,196);</string>
-         </property>
-         <property name="text">
-          <string>Write Extrinsic Parameters</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="2">
-        <widget class="QSpinBox" name="spinBox_5">
-         <property name="maximumSize">
-          <size>
-           <width>50</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QSpinBox {
-	padding-right: 15px; /* make room for the arrows */
-	border:1px solid black;
-	border-radius:5px;
-	background-color: rgb(238, 232, 213);
-	font: 10pt &quot;Microsoft YaHei UI&quot;;
-}
-
-QSpinBox::up-button {
-	image: url(:/ico/uiComponents/upArr.png);
-}
-
-QSpinBox::down-button {
-	image: url(:/ico/uiComponents/downArr.png);
-}
-
-QSpinBox::up-button:pressed {
-	image: url(:/ico/uiComponents/upArrPressed.png);
-	margin-top:3px;
-}
-
-QSpinBox::down-button:pressed {
-	image: url(:/ico/uiComponents/downArrPressed.png);
-	margin-bottom:3px;
-}</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="label_12">
-         <property name="styleSheet">
-          <string notr="true">font: 75 10pt &quot;Microsoft YaHei UI&quot;;
-color: rgb(150,148,141);
-background-color: rgb(216,212,196);</string>
-         </property>
-         <property name="text">
-          <string>Number of frames</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="2">
+       <item row="3" column="2">
         <widget class="QDoubleSpinBox" name="doubleSpinBox_3">
          <property name="maximumSize">
           <size>
@@ -1584,19 +1494,7 @@ QDoubleSpinBox::down-button:pressed {
          </property>
         </widget>
        </item>
-       <item row="14" column="0">
-        <widget class="QLabel" name="label_21">
-         <property name="styleSheet">
-          <string notr="true">font: 75 10pt &quot;Microsoft YaHei UI&quot;;
-color: rgb(150,148,141);
-background-color: rgb(216,212,196);</string>
-         </property>
-         <property name="text">
-          <string>Show Undistorted Images</string>
-         </property>
-        </widget>
-       </item>
-       <item row="9" column="2">
+       <item row="7" column="2">
         <widget class="QCheckBox" name="checkBox_4">
          <property name="maximumSize">
           <size>
@@ -1630,8 +1528,8 @@ QCheckBox::indicator::checked {
          </property>
         </widget>
        </item>
-       <item row="12" column="2">
-        <widget class="QCheckBox" name="checkBox_7">
+       <item row="6" column="2">
+        <widget class="QCheckBox" name="checkBox_3">
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -1664,15 +1562,55 @@ QCheckBox::indicator::checked {
          </property>
         </widget>
        </item>
-       <item row="3" column="0">
-        <widget class="QLabel" name="label_24">
+       <item row="2" column="2">
+        <widget class="QSpinBox" name="spinBox_5">
+         <property name="maximumSize">
+          <size>
+           <width>50</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QSpinBox {
+	padding-right: 15px; /* make room for the arrows */
+	border:1px solid black;
+	border-radius:5px;
+	background-color: rgb(238, 232, 213);
+	font: 10pt &quot;Microsoft YaHei UI&quot;;
+}
+
+QSpinBox::up-button {
+	image: url(:/ico/uiComponents/upArr.png);
+}
+
+QSpinBox::down-button {
+	image: url(:/ico/uiComponents/downArr.png);
+}
+
+QSpinBox::up-button:pressed {
+	image: url(:/ico/uiComponents/upArrPressed.png);
+	margin-top:3px;
+}
+
+QSpinBox::down-button:pressed {
+	image: url(:/ico/uiComponents/downArrPressed.png);
+	margin-bottom:3px;
+}</string>
+         </property>
+        </widget>
+       </item>
+       <item row="12" column="0">
+        <widget class="QLabel" name="label_21">
+         <property name="toolTip">
+          <string extracomment="show undistorted images after calibration"/>
+         </property>
          <property name="styleSheet">
           <string notr="true">font: 75 10pt &quot;Microsoft YaHei UI&quot;;
 color: rgb(150,148,141);
 background-color: rgb(216,212,196);</string>
          </property>
          <property name="text">
-          <string>Delay in frames</string>
+          <string>Show Undistorted Images</string>
          </property>
         </widget>
        </item>
@@ -1686,7 +1624,7 @@ background-color: rgb(216,212,196);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>963</width>
+     <width>930</width>
      <height>23</height>
     </rect>
    </property>

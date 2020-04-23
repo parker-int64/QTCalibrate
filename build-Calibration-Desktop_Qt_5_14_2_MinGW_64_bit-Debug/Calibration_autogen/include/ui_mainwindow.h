@@ -61,7 +61,6 @@ public:
     QLabel *label_6;
     QLabel *label_4;
     QRadioButton *radioButton_3;
-    QRadioButton *radioButton_7;
     QRadioButton *radioButton_8;
     QSpinBox *spinBox;
     QLabel *label_7;
@@ -73,37 +72,32 @@ public:
     QRadioButton *radioButton_6;
     QRadioButton *radioButton;
     QRadioButton *radioButton_5;
-    QRadioButton *radioButton_9;
     QPushButton *pushButton_5;
     QGroupBox *verticalGroupBox_4;
     QGridLayout *gridLayout_2;
-    QPushButton *pushButton_4;
-    QCheckBox *checkBox_3;
-    QSpinBox *spinBox_4;
-    QCheckBox *checkBox_9;
-    QLabel *label_18;
     QLabel *label_11;
-    QLabel *label_17;
-    QDoubleSpinBox *doubleSpinBox_2;
-    QLineEdit *lineEdit;
-    QSpinBox *spinBox_3;
     QLabel *label_15;
-    QCheckBox *checkBox_5;
-    QLabel *label_13;
     QLabel *label_23;
+    QLineEdit *lineEdit;
+    QLabel *label_18;
     QLabel *label_19;
+    QLabel *label_22;
+    QPushButton *pushButton_4;
+    QLabel *label_14;
     QLabel *label_16;
     QCheckBox *checkBox_2;
     QCheckBox *checkBox_8;
-    QLabel *label_22;
-    QLabel *label_14;
-    QSpinBox *spinBox_5;
-    QLabel *label_12;
-    QDoubleSpinBox *doubleSpinBox_3;
-    QLabel *label_21;
-    QCheckBox *checkBox_4;
     QCheckBox *checkBox_7;
-    QLabel *label_24;
+    QDoubleSpinBox *doubleSpinBox_2;
+    QCheckBox *checkBox_5;
+    QLabel *label_17;
+    QLabel *label_13;
+    QCheckBox *checkBox_9;
+    QDoubleSpinBox *doubleSpinBox_3;
+    QCheckBox *checkBox_4;
+    QCheckBox *checkBox_3;
+    QSpinBox *spinBox_5;
+    QLabel *label_21;
     QMenuBar *menubar;
     QStatusBar *statusbar;
     QButtonGroup *buttonGroup_2;
@@ -114,7 +108,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(963, 780);
+        MainWindow->resize(930, 780);
         MainWindow->setStyleSheet(QString::fromUtf8("background-color: rgb(253, 246, 227);"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
@@ -178,7 +172,7 @@ public:
         pushButton->setSizePolicy(sizePolicy2);
         pushButton->setMaximumSize(QSize(100, 50));
         pushButton->setStyleSheet(QString::fromUtf8("QPushButton { \n"
-"	font: 10pt \"Microsoft YaHei UI\";\n"
+"	font: 14pt \"Microsoft YaHei UI\";\n"
 "	border-radius: 3px;\n"
 "	background-color: rgb(172, 157, 87);\n"
 "	color:rgb(246,245,237); \n"
@@ -208,7 +202,7 @@ public:
         pushButton_3->setSizePolicy(sizePolicy2);
         pushButton_3->setMaximumSize(QSize(100, 50));
         pushButton_3->setStyleSheet(QString::fromUtf8("QPushButton { \n"
-"	font: 10pt \"Microsoft YaHei UI\";\n"
+"	font: 14pt \"Microsoft YaHei UI\";\n"
 "	border-radius: 3px;\n"
 "	background-color: rgb(172, 157, 87);\n"
 "	color:rgb(246,245,237); \n"
@@ -285,7 +279,7 @@ public:
         pushButton_2->setSizePolicy(sizePolicy3);
         pushButton_2->setMaximumSize(QSize(385, 50));
         pushButton_2->setStyleSheet(QString::fromUtf8("QPushButton { \n"
-"	font: 10pt \"Microsoft YaHei UI\";\n"
+"	font: 14pt \"Microsoft YaHei UI\";\n"
 "	border-radius: 3px;\n"
 "	background-color: #4CAF50;; \n"
 "    color: white; \n"
@@ -393,34 +387,6 @@ public:
 ""));
 
         gridLayout_4->addWidget(radioButton_3, 5, 4, 1, 1);
-
-        radioButton_7 = new QRadioButton(verticalGroupBox_5);
-        buttonGroup_3 = new QButtonGroup(MainWindow);
-        buttonGroup_3->setObjectName(QString::fromUtf8("buttonGroup_3"));
-        buttonGroup_3->addButton(radioButton_7);
-        radioButton_7->setObjectName(QString::fromUtf8("radioButton_7"));
-        radioButton_7->setStyleSheet(QString::fromUtf8("/*RadioButton\346\240\267\345\274\217\350\256\276\347\275\256*/\n"
-"QRadioButton::indicator { \n"
-"    width: 17px;\n"
-"    height: 17px;\n"
-"}\n"
-"/*\345\215\225\351\200\211\346\241\206\346\234\252\351\200\211\344\270\255\346\240\267\345\274\217*/\n"
-"QRadioButton::indicator::unchecked {\n"
-"	image: url(:/ico/uiComponents/radiounchecked.png);\n"
-"}\n"
-"/*\345\215\225\351\200\211\346\241\206\351\200\211\344\270\255\346\240\267\345\274\217*/\n"
-"QRadioButton::indicator::checked { \n"
-"	image: url(:/ico/uiComponents/radiochecked.png);\n"
-"}\n"
-"/*RadioButton\345\222\214checkbox\345\255\227\344\275\223\345\222\214\351\227\264\350\267\235\350\256\276\347\275\256*/\n"
-"QRadioButton ,QCheckBox{\n"
-"	font: 10pt \"Microsoft YaHei UI\";\n"
-"	color: rgb(150,148,141);\n"
-"    spacing: 5px;\n"
-"}\n"
-""));
-
-        gridLayout_4->addWidget(radioButton_7, 0, 5, 1, 1);
 
         radioButton_8 = new QRadioButton(verticalGroupBox_5);
         buttonGroup_2->addButton(radioButton_8);
@@ -658,8 +624,16 @@ public:
         gridLayout_4->addWidget(radioButton_6, 3, 6, 1, 1);
 
         radioButton = new QRadioButton(verticalGroupBox_5);
+        buttonGroup_3 = new QButtonGroup(MainWindow);
+        buttonGroup_3->setObjectName(QString::fromUtf8("buttonGroup_3"));
         buttonGroup_3->addButton(radioButton);
         radioButton->setObjectName(QString::fromUtf8("radioButton"));
+        QSizePolicy sizePolicy8(QSizePolicy::Maximum, QSizePolicy::Fixed);
+        sizePolicy8.setHorizontalStretch(0);
+        sizePolicy8.setVerticalStretch(0);
+        sizePolicy8.setHeightForWidth(radioButton->sizePolicy().hasHeightForWidth());
+        radioButton->setSizePolicy(sizePolicy8);
+        radioButton->setMaximumSize(QSize(200, 16777215));
         radioButton->setStyleSheet(QString::fromUtf8("/*RadioButton\346\240\267\345\274\217\350\256\276\347\275\256*/\n"
 "QRadioButton::indicator { \n"
 "    width: 17px;\n"
@@ -713,46 +687,20 @@ public:
 
         gridLayout_4->addWidget(radioButton_5, 3, 5, 1, 1);
 
-        radioButton_9 = new QRadioButton(verticalGroupBox_5);
-        buttonGroup_3->addButton(radioButton_9);
-        radioButton_9->setObjectName(QString::fromUtf8("radioButton_9"));
-        radioButton_9->setStyleSheet(QString::fromUtf8("/*RadioButton\346\240\267\345\274\217\350\256\276\347\275\256*/\n"
-"QRadioButton::indicator { \n"
-"    width: 17px;\n"
-"    height: 17px;\n"
-"}\n"
-"/*\345\215\225\351\200\211\346\241\206\346\234\252\351\200\211\344\270\255\346\240\267\345\274\217*/\n"
-"QRadioButton::indicator::unchecked {\n"
-"	image: url(:/ico/uiComponents/radiounchecked.png);\n"
-"}\n"
-"/*\345\215\225\351\200\211\346\241\206\351\200\211\344\270\255\346\240\267\345\274\217*/\n"
-"QRadioButton::indicator::checked { \n"
-"	image: url(:/ico/uiComponents/radiochecked.png);\n"
-"}\n"
-"/*RadioButton\345\222\214checkbox\345\255\227\344\275\223\345\222\214\351\227\264\350\267\235\350\256\276\347\275\256*/\n"
-"QRadioButton ,QCheckBox{\n"
-"	font: 10pt \"Microsoft YaHei UI\";\n"
-"	color: rgb(150,148,141);\n"
-"    spacing: 5px;\n"
-"}\n"
-""));
-
-        gridLayout_4->addWidget(radioButton_9, 0, 6, 1, 1);
-
 
         gridLayout->addWidget(verticalGroupBox_5, 4, 1, 1, 1);
 
         pushButton_5 = new QPushButton(centralwidget);
         pushButton_5->setObjectName(QString::fromUtf8("pushButton_5"));
         pushButton_5->setEnabled(true);
-        QSizePolicy sizePolicy8(QSizePolicy::Maximum, QSizePolicy::Minimum);
-        sizePolicy8.setHorizontalStretch(0);
-        sizePolicy8.setVerticalStretch(0);
-        sizePolicy8.setHeightForWidth(pushButton_5->sizePolicy().hasHeightForWidth());
-        pushButton_5->setSizePolicy(sizePolicy8);
+        QSizePolicy sizePolicy9(QSizePolicy::Maximum, QSizePolicy::Minimum);
+        sizePolicy9.setHorizontalStretch(0);
+        sizePolicy9.setVerticalStretch(0);
+        sizePolicy9.setHeightForWidth(pushButton_5->sizePolicy().hasHeightForWidth());
+        pushButton_5->setSizePolicy(sizePolicy9);
         pushButton_5->setMaximumSize(QSize(385, 50));
         pushButton_5->setStyleSheet(QString::fromUtf8("QPushButton { \n"
-"	font: 10pt \"Microsoft YaHei UI\";\n"
+"	font: 14pt \"Microsoft YaHei UI\";\n"
 "	border-radius: 3px;\n"
 "	background-color: #4CAF50;; \n"
 "    color: white; \n"
@@ -788,6 +736,70 @@ public:
         verticalGroupBox_4->setStyleSheet(QString::fromUtf8("background-color: rgb(216,212,196);"));
         gridLayout_2 = new QGridLayout(verticalGroupBox_4);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
+        label_11 = new QLabel(verticalGroupBox_4);
+        label_11->setObjectName(QString::fromUtf8("label_11"));
+        QSizePolicy sizePolicy10(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy10.setHorizontalStretch(0);
+        sizePolicy10.setVerticalStretch(0);
+        sizePolicy10.setHeightForWidth(label_11->sizePolicy().hasHeightForWidth());
+        label_11->setSizePolicy(sizePolicy10);
+        label_11->setMaximumSize(QSize(16777215, 16777215));
+        label_11->setStyleSheet(QString::fromUtf8("font: 75 10pt \"Microsoft YaHei UI\";\n"
+"color: rgb(150,148,141);\n"
+"background-color: rgb(216,212,196);"));
+
+        gridLayout_2->addWidget(label_11, 0, 0, 1, 1);
+
+        label_15 = new QLabel(verticalGroupBox_4);
+        label_15->setObjectName(QString::fromUtf8("label_15"));
+        label_15->setStyleSheet(QString::fromUtf8("font: 75 10pt \"Microsoft YaHei UI\";\n"
+"color: rgb(150,148,141);\n"
+"background-color: rgb(216,212,196);"));
+
+        gridLayout_2->addWidget(label_15, 7, 0, 1, 1);
+
+        label_23 = new QLabel(verticalGroupBox_4);
+        label_23->setObjectName(QString::fromUtf8("label_23"));
+        label_23->setStyleSheet(QString::fromUtf8("font: 75 10pt \"Microsoft YaHei UI\";\n"
+"color: rgb(150,148,141);\n"
+"background-color: rgb(216,212,196);"));
+
+        gridLayout_2->addWidget(label_23, 3, 0, 1, 1);
+
+        lineEdit = new QLineEdit(verticalGroupBox_4);
+        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
+        sizePolicy10.setHeightForWidth(lineEdit->sizePolicy().hasHeightForWidth());
+        lineEdit->setSizePolicy(sizePolicy10);
+        lineEdit->setMaximumSize(QSize(200, 16777215));
+        lineEdit->setStyleSheet(QString::fromUtf8("background-color: rgb(238, 232, 213);\n"
+"font: 9pt \"Consolas\";"));
+
+        gridLayout_2->addWidget(lineEdit, 0, 2, 1, 1);
+
+        label_18 = new QLabel(verticalGroupBox_4);
+        label_18->setObjectName(QString::fromUtf8("label_18"));
+        label_18->setStyleSheet(QString::fromUtf8("font: 75 10pt \"Microsoft YaHei UI\";\n"
+"color: rgb(150,148,141);\n"
+"background-color: rgb(216,212,196);"));
+
+        gridLayout_2->addWidget(label_18, 10, 0, 1, 1);
+
+        label_19 = new QLabel(verticalGroupBox_4);
+        label_19->setObjectName(QString::fromUtf8("label_19"));
+        label_19->setStyleSheet(QString::fromUtf8("font: 75 10pt \"Microsoft YaHei UI\";\n"
+"color: rgb(150,148,141);\n"
+"background-color: rgb(216,212,196);"));
+
+        gridLayout_2->addWidget(label_19, 11, 0, 1, 1);
+
+        label_22 = new QLabel(verticalGroupBox_4);
+        label_22->setObjectName(QString::fromUtf8("label_22"));
+        label_22->setStyleSheet(QString::fromUtf8("font: 75 10pt \"Microsoft YaHei UI\";\n"
+"color: rgb(150,148,141);\n"
+"background-color: rgb(216,212,196);"));
+
+        gridLayout_2->addWidget(label_22, 2, 0, 1, 1);
+
         pushButton_4 = new QPushButton(verticalGroupBox_4);
         pushButton_4->setObjectName(QString::fromUtf8("pushButton_4"));
         sizePolicy2.setHeightForWidth(pushButton_4->sizePolicy().hasHeightForWidth());
@@ -818,10 +830,31 @@ public:
 
         gridLayout_2->addWidget(pushButton_4, 0, 3, 1, 1);
 
-        checkBox_3 = new QCheckBox(verticalGroupBox_4);
-        checkBox_3->setObjectName(QString::fromUtf8("checkBox_3"));
-        checkBox_3->setMaximumSize(QSize(16777215, 15));
-        checkBox_3->setStyleSheet(QString::fromUtf8("QCheckBox{\n"
+        label_14 = new QLabel(verticalGroupBox_4);
+        label_14->setObjectName(QString::fromUtf8("label_14"));
+        label_14->setStyleSheet(QString::fromUtf8("font: 75 10pt \"Microsoft YaHei UI\";\n"
+"color: rgb(150,148,141);\n"
+"background-color: rgb(216,212,196);"));
+
+        gridLayout_2->addWidget(label_14, 6, 0, 1, 1);
+
+        label_16 = new QLabel(verticalGroupBox_4);
+        label_16->setObjectName(QString::fromUtf8("label_16"));
+        QSizePolicy sizePolicy11(QSizePolicy::Fixed, QSizePolicy::Preferred);
+        sizePolicy11.setHorizontalStretch(0);
+        sizePolicy11.setVerticalStretch(0);
+        sizePolicy11.setHeightForWidth(label_16->sizePolicy().hasHeightForWidth());
+        label_16->setSizePolicy(sizePolicy11);
+        label_16->setStyleSheet(QString::fromUtf8("font: 75 10pt \"Microsoft YaHei UI\";\n"
+"color: rgb(150,148,141);\n"
+"background-color: rgb(216,212,196);"));
+
+        gridLayout_2->addWidget(label_16, 8, 0, 1, 1);
+
+        checkBox_2 = new QCheckBox(verticalGroupBox_4);
+        checkBox_2->setObjectName(QString::fromUtf8("checkBox_2"));
+        checkBox_2->setMaximumSize(QSize(16777215, 15));
+        checkBox_2->setStyleSheet(QString::fromUtf8("QCheckBox{\n"
 "    spacing: 5px;\n"
 "    font-size: 15px;\n"
 "	font: 10pt \"Microsoft YaHei UI\";\n"
@@ -841,48 +874,12 @@ public:
 "    image: url(:/ico/uiComponents/checked.png);\n"
 "}"));
 
-        gridLayout_2->addWidget(checkBox_3, 8, 2, 1, 1);
+        gridLayout_2->addWidget(checkBox_2, 4, 2, 1, 1);
 
-        spinBox_4 = new QSpinBox(verticalGroupBox_4);
-        spinBox_4->setObjectName(QString::fromUtf8("spinBox_4"));
-        QSizePolicy sizePolicy9(QSizePolicy::Expanding, QSizePolicy::Preferred);
-        sizePolicy9.setHorizontalStretch(0);
-        sizePolicy9.setVerticalStretch(0);
-        sizePolicy9.setHeightForWidth(spinBox_4->sizePolicy().hasHeightForWidth());
-        spinBox_4->setSizePolicy(sizePolicy9);
-        spinBox_4->setMaximumSize(QSize(50, 20));
-        spinBox_4->setStyleSheet(QString::fromUtf8("QSpinBox {\n"
-"	padding-right: 15px; /* make room for the arrows */\n"
-"	border:1px solid black;\n"
-"	border-radius:5px;\n"
-"	background-color: rgb(238, 232, 213);\n"
-"	font: 10pt \"Microsoft YaHei UI\";\n"
-"}\n"
-"\n"
-"QSpinBox::up-button {\n"
-"	image: url(:/ico/uiComponents/upArr.png);\n"
-"}\n"
-"\n"
-"QSpinBox::down-button {\n"
-"	image: url(:/ico/uiComponents/downArr.png);\n"
-"}\n"
-"\n"
-"QSpinBox::up-button:pressed {\n"
-"	image: url(:/ico/uiComponents/upArrPressed.png);\n"
-"	margin-top:3px;\n"
-"}\n"
-"\n"
-"QSpinBox::down-button:pressed {\n"
-"	image: url(:/ico/uiComponents/downArrPressed.png);\n"
-"	margin-bottom:3px;\n"
-"}"));
-
-        gridLayout_2->addWidget(spinBox_4, 2, 2, 1, 1);
-
-        checkBox_9 = new QCheckBox(verticalGroupBox_4);
-        checkBox_9->setObjectName(QString::fromUtf8("checkBox_9"));
-        checkBox_9->setMaximumSize(QSize(16777215, 15));
-        checkBox_9->setStyleSheet(QString::fromUtf8("QCheckBox{\n"
+        checkBox_8 = new QCheckBox(verticalGroupBox_4);
+        checkBox_8->setObjectName(QString::fromUtf8("checkBox_8"));
+        checkBox_8->setMaximumSize(QSize(16777215, 15));
+        checkBox_8->setStyleSheet(QString::fromUtf8("QCheckBox{\n"
 "    spacing: 5px;\n"
 "    font-size: 15px;\n"
 "	font: 10pt \"Microsoft YaHei UI\";\n"
@@ -902,34 +899,32 @@ public:
 "    image: url(:/ico/uiComponents/checked.png);\n"
 "}"));
 
-        gridLayout_2->addWidget(checkBox_9, 14, 2, 1, 1);
+        gridLayout_2->addWidget(checkBox_8, 11, 2, 1, 1);
 
-        label_18 = new QLabel(verticalGroupBox_4);
-        label_18->setObjectName(QString::fromUtf8("label_18"));
-        label_18->setStyleSheet(QString::fromUtf8("font: 75 10pt \"Microsoft YaHei UI\";\n"
-"color: rgb(150,148,141);\n"
-"background-color: rgb(216,212,196);"));
+        checkBox_7 = new QCheckBox(verticalGroupBox_4);
+        checkBox_7->setObjectName(QString::fromUtf8("checkBox_7"));
+        checkBox_7->setMaximumSize(QSize(16777215, 15));
+        checkBox_7->setStyleSheet(QString::fromUtf8("QCheckBox{\n"
+"    spacing: 5px;\n"
+"    font-size: 15px;\n"
+"	font: 10pt \"Microsoft YaHei UI\";\n"
+"	color: rgb(150,148,141);\n"
+"}\n"
+"/*checkbox\346\240\267\345\274\217\350\256\276\347\275\256*/\n"
+"QCheckBox::indicator { \n"
+"    width: 26px;\n"
+"    height: 50px;\n"
+"}\n"
+"/*\346\234\252\351\200\211\344\270\255*/\n"
+"QCheckBox::indicator::unchecked {   \n"
+"    image: url(:/ico/uiComponents/unchecked.png);\n"
+"}\n"
+"/*\351\200\211\344\270\255*/\n"
+"QCheckBox::indicator::checked { \n"
+"    image: url(:/ico/uiComponents/checked.png);\n"
+"}"));
 
-        gridLayout_2->addWidget(label_18, 12, 0, 1, 1);
-
-        label_11 = new QLabel(verticalGroupBox_4);
-        label_11->setObjectName(QString::fromUtf8("label_11"));
-        sizePolicy5.setHeightForWidth(label_11->sizePolicy().hasHeightForWidth());
-        label_11->setSizePolicy(sizePolicy5);
-        label_11->setMaximumSize(QSize(16777215, 16777215));
-        label_11->setStyleSheet(QString::fromUtf8("font: 75 10pt \"Microsoft YaHei UI\";\n"
-"color: rgb(150,148,141);\n"
-"background-color: rgb(216,212,196);"));
-
-        gridLayout_2->addWidget(label_11, 0, 0, 1, 1);
-
-        label_17 = new QLabel(verticalGroupBox_4);
-        label_17->setObjectName(QString::fromUtf8("label_17"));
-        label_17->setStyleSheet(QString::fromUtf8("font: 75 10pt \"Microsoft YaHei UI\";\n"
-"color: rgb(150,148,141);\n"
-"background-color: rgb(216,212,196);"));
-
-        gridLayout_2->addWidget(label_17, 11, 0, 1, 1);
+        gridLayout_2->addWidget(checkBox_7, 10, 2, 1, 1);
 
         doubleSpinBox_2 = new QDoubleSpinBox(verticalGroupBox_4);
         doubleSpinBox_2->setObjectName(QString::fromUtf8("doubleSpinBox_2"));
@@ -960,58 +955,7 @@ public:
 "	margin-bottom:3px;\n"
 "}"));
 
-        gridLayout_2->addWidget(doubleSpinBox_2, 11, 2, 1, 1);
-
-        lineEdit = new QLineEdit(verticalGroupBox_4);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-        QSizePolicy sizePolicy10(QSizePolicy::Fixed, QSizePolicy::Fixed);
-        sizePolicy10.setHorizontalStretch(0);
-        sizePolicy10.setVerticalStretch(0);
-        sizePolicy10.setHeightForWidth(lineEdit->sizePolicy().hasHeightForWidth());
-        lineEdit->setSizePolicy(sizePolicy10);
-        lineEdit->setMaximumSize(QSize(200, 16777215));
-        lineEdit->setStyleSheet(QString::fromUtf8("background-color: rgb(238, 232, 213);"));
-
-        gridLayout_2->addWidget(lineEdit, 0, 2, 1, 1);
-
-        spinBox_3 = new QSpinBox(verticalGroupBox_4);
-        spinBox_3->setObjectName(QString::fromUtf8("spinBox_3"));
-        spinBox_3->setMaximumSize(QSize(50, 16777215));
-        spinBox_3->setStyleSheet(QString::fromUtf8("QSpinBox {\n"
-"	padding-right: 15px; /* make room for the arrows */\n"
-"	border:1px solid black;\n"
-"	border-radius:5px;\n"
-"	background-color: rgb(238, 232, 213);\n"
-"	font: 10pt \"Microsoft YaHei UI\";\n"
-"}\n"
-"\n"
-"QSpinBox::up-button {\n"
-"	image: url(:/ico/uiComponents/upArr.png);\n"
-"}\n"
-"\n"
-"QSpinBox::down-button {\n"
-"	image: url(:/ico/uiComponents/downArr.png);\n"
-"}\n"
-"\n"
-"QSpinBox::up-button:pressed {\n"
-"	image: url(:/ico/uiComponents/upArrPressed.png);\n"
-"	margin-top:3px;\n"
-"}\n"
-"\n"
-"QSpinBox::down-button:pressed {\n"
-"	image: url(:/ico/uiComponents/downArrPressed.png);\n"
-"	margin-bottom:3px;\n"
-"}"));
-
-        gridLayout_2->addWidget(spinBox_3, 3, 2, 1, 1);
-
-        label_15 = new QLabel(verticalGroupBox_4);
-        label_15->setObjectName(QString::fromUtf8("label_15"));
-        label_15->setStyleSheet(QString::fromUtf8("font: 75 10pt \"Microsoft YaHei UI\";\n"
-"color: rgb(150,148,141);\n"
-"background-color: rgb(216,212,196);"));
-
-        gridLayout_2->addWidget(label_15, 9, 0, 1, 1);
+        gridLayout_2->addWidget(doubleSpinBox_2, 9, 2, 1, 1);
 
         checkBox_5 = new QCheckBox(verticalGroupBox_4);
         checkBox_5->setObjectName(QString::fromUtf8("checkBox_5"));
@@ -1036,7 +980,15 @@ public:
 "    image: url(:/ico/uiComponents/checked.png);\n"
 "}"));
 
-        gridLayout_2->addWidget(checkBox_5, 10, 2, 1, 1);
+        gridLayout_2->addWidget(checkBox_5, 8, 2, 1, 1);
+
+        label_17 = new QLabel(verticalGroupBox_4);
+        label_17->setObjectName(QString::fromUtf8("label_17"));
+        label_17->setStyleSheet(QString::fromUtf8("font: 75 10pt \"Microsoft YaHei UI\";\n"
+"color: rgb(150,148,141);\n"
+"background-color: rgb(216,212,196);"));
+
+        gridLayout_2->addWidget(label_17, 9, 0, 1, 1);
 
         label_13 = new QLabel(verticalGroupBox_4);
         label_13->setObjectName(QString::fromUtf8("label_13"));
@@ -1044,36 +996,12 @@ public:
 "color: rgb(150,148,141);\n"
 "background-color: rgb(216,212,196);"));
 
-        gridLayout_2->addWidget(label_13, 6, 0, 1, 1);
+        gridLayout_2->addWidget(label_13, 4, 0, 1, 1);
 
-        label_23 = new QLabel(verticalGroupBox_4);
-        label_23->setObjectName(QString::fromUtf8("label_23"));
-        label_23->setStyleSheet(QString::fromUtf8("font: 75 10pt \"Microsoft YaHei UI\";\n"
-"color: rgb(150,148,141);\n"
-"background-color: rgb(216,212,196);"));
-
-        gridLayout_2->addWidget(label_23, 5, 0, 1, 1);
-
-        label_19 = new QLabel(verticalGroupBox_4);
-        label_19->setObjectName(QString::fromUtf8("label_19"));
-        label_19->setStyleSheet(QString::fromUtf8("font: 75 10pt \"Microsoft YaHei UI\";\n"
-"color: rgb(150,148,141);\n"
-"background-color: rgb(216,212,196);"));
-
-        gridLayout_2->addWidget(label_19, 13, 0, 1, 1);
-
-        label_16 = new QLabel(verticalGroupBox_4);
-        label_16->setObjectName(QString::fromUtf8("label_16"));
-        label_16->setStyleSheet(QString::fromUtf8("font: 75 10pt \"Microsoft YaHei UI\";\n"
-"color: rgb(150,148,141);\n"
-"background-color: rgb(216,212,196);"));
-
-        gridLayout_2->addWidget(label_16, 10, 0, 1, 1);
-
-        checkBox_2 = new QCheckBox(verticalGroupBox_4);
-        checkBox_2->setObjectName(QString::fromUtf8("checkBox_2"));
-        checkBox_2->setMaximumSize(QSize(16777215, 15));
-        checkBox_2->setStyleSheet(QString::fromUtf8("QCheckBox{\n"
+        checkBox_9 = new QCheckBox(verticalGroupBox_4);
+        checkBox_9->setObjectName(QString::fromUtf8("checkBox_9"));
+        checkBox_9->setMaximumSize(QSize(16777215, 15));
+        checkBox_9->setStyleSheet(QString::fromUtf8("QCheckBox{\n"
 "    spacing: 5px;\n"
 "    font-size: 15px;\n"
 "	font: 10pt \"Microsoft YaHei UI\";\n"
@@ -1093,87 +1021,7 @@ public:
 "    image: url(:/ico/uiComponents/checked.png);\n"
 "}"));
 
-        gridLayout_2->addWidget(checkBox_2, 6, 2, 1, 1);
-
-        checkBox_8 = new QCheckBox(verticalGroupBox_4);
-        checkBox_8->setObjectName(QString::fromUtf8("checkBox_8"));
-        checkBox_8->setMaximumSize(QSize(16777215, 15));
-        checkBox_8->setStyleSheet(QString::fromUtf8("QCheckBox{\n"
-"    spacing: 5px;\n"
-"    font-size: 15px;\n"
-"	font: 10pt \"Microsoft YaHei UI\";\n"
-"	color: rgb(150,148,141);\n"
-"}\n"
-"/*checkbox\346\240\267\345\274\217\350\256\276\347\275\256*/\n"
-"QCheckBox::indicator { \n"
-"    width: 26px;\n"
-"    height: 50px;\n"
-"}\n"
-"/*\346\234\252\351\200\211\344\270\255*/\n"
-"QCheckBox::indicator::unchecked {   \n"
-"    image: url(:/ico/uiComponents/unchecked.png);\n"
-"}\n"
-"/*\351\200\211\344\270\255*/\n"
-"QCheckBox::indicator::checked { \n"
-"    image: url(:/ico/uiComponents/checked.png);\n"
-"}"));
-
-        gridLayout_2->addWidget(checkBox_8, 13, 2, 1, 1);
-
-        label_22 = new QLabel(verticalGroupBox_4);
-        label_22->setObjectName(QString::fromUtf8("label_22"));
-        label_22->setStyleSheet(QString::fromUtf8("font: 75 10pt \"Microsoft YaHei UI\";\n"
-"color: rgb(150,148,141);\n"
-"background-color: rgb(216,212,196);"));
-
-        gridLayout_2->addWidget(label_22, 4, 0, 1, 1);
-
-        label_14 = new QLabel(verticalGroupBox_4);
-        label_14->setObjectName(QString::fromUtf8("label_14"));
-        label_14->setStyleSheet(QString::fromUtf8("font: 75 10pt \"Microsoft YaHei UI\";\n"
-"color: rgb(150,148,141);\n"
-"background-color: rgb(216,212,196);"));
-
-        gridLayout_2->addWidget(label_14, 8, 0, 1, 1);
-
-        spinBox_5 = new QSpinBox(verticalGroupBox_4);
-        spinBox_5->setObjectName(QString::fromUtf8("spinBox_5"));
-        spinBox_5->setMaximumSize(QSize(50, 16777215));
-        spinBox_5->setStyleSheet(QString::fromUtf8("QSpinBox {\n"
-"	padding-right: 15px; /* make room for the arrows */\n"
-"	border:1px solid black;\n"
-"	border-radius:5px;\n"
-"	background-color: rgb(238, 232, 213);\n"
-"	font: 10pt \"Microsoft YaHei UI\";\n"
-"}\n"
-"\n"
-"QSpinBox::up-button {\n"
-"	image: url(:/ico/uiComponents/upArr.png);\n"
-"}\n"
-"\n"
-"QSpinBox::down-button {\n"
-"	image: url(:/ico/uiComponents/downArr.png);\n"
-"}\n"
-"\n"
-"QSpinBox::up-button:pressed {\n"
-"	image: url(:/ico/uiComponents/upArrPressed.png);\n"
-"	margin-top:3px;\n"
-"}\n"
-"\n"
-"QSpinBox::down-button:pressed {\n"
-"	image: url(:/ico/uiComponents/downArrPressed.png);\n"
-"	margin-bottom:3px;\n"
-"}"));
-
-        gridLayout_2->addWidget(spinBox_5, 4, 2, 1, 1);
-
-        label_12 = new QLabel(verticalGroupBox_4);
-        label_12->setObjectName(QString::fromUtf8("label_12"));
-        label_12->setStyleSheet(QString::fromUtf8("font: 75 10pt \"Microsoft YaHei UI\";\n"
-"color: rgb(150,148,141);\n"
-"background-color: rgb(216,212,196);"));
-
-        gridLayout_2->addWidget(label_12, 2, 0, 1, 1);
+        gridLayout_2->addWidget(checkBox_9, 12, 2, 1, 1);
 
         doubleSpinBox_3 = new QDoubleSpinBox(verticalGroupBox_4);
         doubleSpinBox_3->setObjectName(QString::fromUtf8("doubleSpinBox_3"));
@@ -1204,15 +1052,7 @@ public:
 "	margin-bottom:3px;\n"
 "}"));
 
-        gridLayout_2->addWidget(doubleSpinBox_3, 5, 2, 1, 1);
-
-        label_21 = new QLabel(verticalGroupBox_4);
-        label_21->setObjectName(QString::fromUtf8("label_21"));
-        label_21->setStyleSheet(QString::fromUtf8("font: 75 10pt \"Microsoft YaHei UI\";\n"
-"color: rgb(150,148,141);\n"
-"background-color: rgb(216,212,196);"));
-
-        gridLayout_2->addWidget(label_21, 14, 0, 1, 1);
+        gridLayout_2->addWidget(doubleSpinBox_3, 3, 2, 1, 1);
 
         checkBox_4 = new QCheckBox(verticalGroupBox_4);
         checkBox_4->setObjectName(QString::fromUtf8("checkBox_4"));
@@ -1237,12 +1077,12 @@ public:
 "    image: url(:/ico/uiComponents/checked.png);\n"
 "}"));
 
-        gridLayout_2->addWidget(checkBox_4, 9, 2, 1, 1);
+        gridLayout_2->addWidget(checkBox_4, 7, 2, 1, 1);
 
-        checkBox_7 = new QCheckBox(verticalGroupBox_4);
-        checkBox_7->setObjectName(QString::fromUtf8("checkBox_7"));
-        checkBox_7->setMaximumSize(QSize(16777215, 15));
-        checkBox_7->setStyleSheet(QString::fromUtf8("QCheckBox{\n"
+        checkBox_3 = new QCheckBox(verticalGroupBox_4);
+        checkBox_3->setObjectName(QString::fromUtf8("checkBox_3"));
+        checkBox_3->setMaximumSize(QSize(16777215, 15));
+        checkBox_3->setStyleSheet(QString::fromUtf8("QCheckBox{\n"
 "    spacing: 5px;\n"
 "    font-size: 15px;\n"
 "	font: 10pt \"Microsoft YaHei UI\";\n"
@@ -1262,15 +1102,46 @@ public:
 "    image: url(:/ico/uiComponents/checked.png);\n"
 "}"));
 
-        gridLayout_2->addWidget(checkBox_7, 12, 2, 1, 1);
+        gridLayout_2->addWidget(checkBox_3, 6, 2, 1, 1);
 
-        label_24 = new QLabel(verticalGroupBox_4);
-        label_24->setObjectName(QString::fromUtf8("label_24"));
-        label_24->setStyleSheet(QString::fromUtf8("font: 75 10pt \"Microsoft YaHei UI\";\n"
+        spinBox_5 = new QSpinBox(verticalGroupBox_4);
+        spinBox_5->setObjectName(QString::fromUtf8("spinBox_5"));
+        spinBox_5->setMaximumSize(QSize(50, 16777215));
+        spinBox_5->setStyleSheet(QString::fromUtf8("QSpinBox {\n"
+"	padding-right: 15px; /* make room for the arrows */\n"
+"	border:1px solid black;\n"
+"	border-radius:5px;\n"
+"	background-color: rgb(238, 232, 213);\n"
+"	font: 10pt \"Microsoft YaHei UI\";\n"
+"}\n"
+"\n"
+"QSpinBox::up-button {\n"
+"	image: url(:/ico/uiComponents/upArr.png);\n"
+"}\n"
+"\n"
+"QSpinBox::down-button {\n"
+"	image: url(:/ico/uiComponents/downArr.png);\n"
+"}\n"
+"\n"
+"QSpinBox::up-button:pressed {\n"
+"	image: url(:/ico/uiComponents/upArrPressed.png);\n"
+"	margin-top:3px;\n"
+"}\n"
+"\n"
+"QSpinBox::down-button:pressed {\n"
+"	image: url(:/ico/uiComponents/downArrPressed.png);\n"
+"	margin-bottom:3px;\n"
+"}"));
+
+        gridLayout_2->addWidget(spinBox_5, 2, 2, 1, 1);
+
+        label_21 = new QLabel(verticalGroupBox_4);
+        label_21->setObjectName(QString::fromUtf8("label_21"));
+        label_21->setStyleSheet(QString::fromUtf8("font: 75 10pt \"Microsoft YaHei UI\";\n"
 "color: rgb(150,148,141);\n"
 "background-color: rgb(216,212,196);"));
 
-        gridLayout_2->addWidget(label_24, 3, 0, 1, 1);
+        gridLayout_2->addWidget(label_21, 12, 0, 1, 1);
 
 
         gridLayout->addWidget(verticalGroupBox_4, 15, 1, 1, 1);
@@ -1278,7 +1149,7 @@ public:
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 963, 23));
+        menubar->setGeometry(QRect(0, 0, 930, 23));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
@@ -1292,6 +1163,9 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+#if QT_CONFIG(tooltip)
+        textBrowser->setToolTip(QString());
+#endif // QT_CONFIG(tooltip)
         label_9->setText(QCoreApplication::translate("MainWindow", "Advanced Calibrate Settings", nullptr));
 #if QT_CONFIG(tooltip)
         pushButton->setToolTip(QCoreApplication::translate("MainWindow", "<html><head/><body><p>Reset all parameters above</p></body></html>", nullptr));
@@ -1308,6 +1182,9 @@ public:
 #endif // QT_CONFIG(tooltip)
         pushButton_2->setText(QCoreApplication::translate("MainWindow", "Calibrate", nullptr));
 #if QT_CONFIG(tooltip)
+        verticalGroupBox_5->setToolTip(QString());
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(tooltip)
         label_2->setToolTip(QString());
 #endif // QT_CONFIG(tooltip)
         label_2->setText(QCoreApplication::translate("MainWindow", "Picture Source", nullptr));
@@ -1315,21 +1192,23 @@ public:
         label->setToolTip(QCoreApplication::translate("MainWindow", "<html><head/><body><p>Select the resolution of pictures</p></body></html>", nullptr));
 #endif // QT_CONFIG(tooltip)
         label->setText(QCoreApplication::translate("MainWindow", "Resolution", nullptr));
-        label_6->setText(QCoreApplication::translate("MainWindow", "Height", nullptr));
+#if QT_CONFIG(tooltip)
+        label_6->setToolTip(QString());
+#endif // QT_CONFIG(tooltip)
+        label_6->setText(QCoreApplication::translate("MainWindow", "Board Height", nullptr));
 #if QT_CONFIG(tooltip)
         label_4->setToolTip(QCoreApplication::translate("MainWindow", "<html><head/><body><p>Choose a calibrate pattern</p></body></html>", nullptr));
 #endif // QT_CONFIG(tooltip)
         label_4->setText(QCoreApplication::translate("MainWindow", "Calibrate Patterns", nullptr));
         radioButton_3->setText(QCoreApplication::translate("MainWindow", "Chessboard", nullptr));
-#if QT_CONFIG(tooltip)
-        radioButton_7->setToolTip(QCoreApplication::translate("MainWindow", "<html><head/><body><p>Calibrate a webcam directly</p></body></html>", nullptr));
-#endif // QT_CONFIG(tooltip)
-        radioButton_7->setText(QCoreApplication::translate("MainWindow", "Webcam", nullptr));
         radioButton_8->setText(QCoreApplication::translate("MainWindow", "Asymmetrice Circle Grid", nullptr));
 #if QT_CONFIG(tooltip)
         spinBox->setToolTip(QCoreApplication::translate("MainWindow", "<html><head/><body><p>Heigh of a chessboard or a circle grid</p></body></html>", nullptr));
 #endif // QT_CONFIG(tooltip)
-        label_7->setText(QCoreApplication::translate("MainWindow", "Size", nullptr));
+#if QT_CONFIG(tooltip)
+        label_7->setToolTip(QString());
+#endif // QT_CONFIG(tooltip)
+        label_7->setText(QCoreApplication::translate("MainWindow", "Board Size", nullptr));
         radioButton_2->setText(QCoreApplication::translate("MainWindow", "320*240", nullptr));
 #if QT_CONFIG(tooltip)
         spinBox_2->setToolTip(QCoreApplication::translate("MainWindow", "<html><head/><body><p>Width of a chessboard or a circle grid</p></body></html>", nullptr));
@@ -1338,7 +1217,10 @@ public:
         doubleSpinBox->setToolTip(QCoreApplication::translate("MainWindow", "<html><head/><body><p>Size of a square or a circle</p></body></html>", nullptr));
 #endif // QT_CONFIG(tooltip)
         radioButton_4->setText(QCoreApplication::translate("MainWindow", "Circles Grid", nullptr));
-        label_5->setText(QCoreApplication::translate("MainWindow", "Width", nullptr));
+#if QT_CONFIG(tooltip)
+        label_5->setToolTip(QString());
+#endif // QT_CONFIG(tooltip)
+        label_5->setText(QCoreApplication::translate("MainWindow", "Board Width", nullptr));
         radioButton_6->setText(QCoreApplication::translate("MainWindow", "1280*720", nullptr));
 #if QT_CONFIG(tooltip)
         radioButton->setToolTip(QCoreApplication::translate("MainWindow", "<html><head/><body><p>Calibrate a camera from local picture files.</p></body></html>", nullptr));
@@ -1352,31 +1234,70 @@ public:
 #if QT_CONFIG(accessibility)
         radioButton->setAccessibleDescription(QString());
 #endif // QT_CONFIG(accessibility)
-        radioButton->setText(QCoreApplication::translate("MainWindow", "Local Image Files", nullptr));
+        radioButton->setText(QCoreApplication::translate("MainWindow", "Image Files ", nullptr));
         radioButton_5->setText(QCoreApplication::translate("MainWindow", "640*480", nullptr));
-        radioButton_9->setText(QCoreApplication::translate("MainWindow", "Local Video Files", nullptr));
-        pushButton_5->setText(QCoreApplication::translate("MainWindow", "Add to ImageList.yml", nullptr));
-        pushButton_4->setText(QCoreApplication::translate("MainWindow", "Select", nullptr));
-        checkBox_3->setText(QString());
-        checkBox_9->setText(QString());
-        label_18->setText(QCoreApplication::translate("MainWindow", "Fix the Principal Point", nullptr));
+#if QT_CONFIG(tooltip)
+        pushButton_5->setToolTip(QString());
+#endif // QT_CONFIG(tooltip)
+        pushButton_5->setText(QCoreApplication::translate("MainWindow", "Add to Imagelist.yaml", nullptr));
+#if QT_CONFIG(tooltip)
+        verticalGroupBox_4->setToolTip(QString());
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(tooltip)
+        label_11->setToolTip(QString());
+#endif // QT_CONFIG(tooltip)
         label_11->setText(QCoreApplication::translate("MainWindow", "Calibrate File Output", nullptr));
-        label_17->setText(QCoreApplication::translate("MainWindow", "Fix Aspect Ratio(fx/fy)", nullptr));
+#if QT_CONFIG(tooltip)
+        label_15->setToolTip(QString());
+#endif // QT_CONFIG(tooltip)
         label_15->setText(QCoreApplication::translate("MainWindow", "Write Refined 3D Object Points", nullptr));
-        checkBox_5->setText(QString());
-        label_13->setText(QCoreApplication::translate("MainWindow", "Write Detected Feature Points", nullptr));
-        label_23->setText(QCoreApplication::translate("MainWindow", "Actual Distance", nullptr));
+#if QT_CONFIG(tooltip)
+        label_23->setToolTip(QString());
+#endif // QT_CONFIG(tooltip)
+        label_23->setText(QCoreApplication::translate("MainWindow", "Distance", nullptr));
+#if QT_CONFIG(tooltip)
+        label_18->setToolTip(QString());
+#endif // QT_CONFIG(tooltip)
+        label_18->setText(QCoreApplication::translate("MainWindow", "Fix the Principal Point", nullptr));
+#if QT_CONFIG(tooltip)
+        label_19->setToolTip(QString());
+#endif // QT_CONFIG(tooltip)
         label_19->setText(QCoreApplication::translate("MainWindow", "Flip the Captured Images", nullptr));
+#if QT_CONFIG(tooltip)
+        label_22->setToolTip(QString());
+#endif // QT_CONFIG(tooltip)
+        label_22->setText(QCoreApplication::translate("MainWindow", "Window Size", nullptr));
+#if QT_CONFIG(tooltip)
+        pushButton_4->setToolTip(QString());
+#endif // QT_CONFIG(tooltip)
+        pushButton_4->setText(QCoreApplication::translate("MainWindow", "Select", nullptr));
+#if QT_CONFIG(tooltip)
+        label_14->setToolTip(QString());
+#endif // QT_CONFIG(tooltip)
+        label_14->setText(QCoreApplication::translate("MainWindow", "Write Extrinsic Parameters", nullptr));
+#if QT_CONFIG(tooltip)
+        label_16->setToolTip(QString());
+#endif // QT_CONFIG(tooltip)
         label_16->setText(QCoreApplication::translate("MainWindow", "Assume Zero Tangential Distortion", nullptr));
         checkBox_2->setText(QString());
         checkBox_8->setText(QString());
-        label_22->setText(QCoreApplication::translate("MainWindow", "Half of Search", nullptr));
-        label_14->setText(QCoreApplication::translate("MainWindow", "Write Extrinsic Parameters", nullptr));
-        label_12->setText(QCoreApplication::translate("MainWindow", "Number of frames", nullptr));
-        label_21->setText(QCoreApplication::translate("MainWindow", "Show Undistorted Images", nullptr));
-        checkBox_4->setText(QString());
         checkBox_7->setText(QString());
-        label_24->setText(QCoreApplication::translate("MainWindow", "Delay in frames", nullptr));
+        checkBox_5->setText(QString());
+#if QT_CONFIG(tooltip)
+        label_17->setToolTip(QString());
+#endif // QT_CONFIG(tooltip)
+        label_17->setText(QCoreApplication::translate("MainWindow", "Fix Aspect Ratio(fx/fy)", nullptr));
+#if QT_CONFIG(tooltip)
+        label_13->setToolTip(QString());
+#endif // QT_CONFIG(tooltip)
+        label_13->setText(QCoreApplication::translate("MainWindow", "Write Detected Feature Points", nullptr));
+        checkBox_9->setText(QString());
+        checkBox_4->setText(QString());
+        checkBox_3->setText(QString());
+#if QT_CONFIG(tooltip)
+        label_21->setToolTip(QString());
+#endif // QT_CONFIG(tooltip)
+        label_21->setText(QCoreApplication::translate("MainWindow", "Show Undistorted Images", nullptr));
     } // retranslateUi
 
 };

@@ -1,4 +1,0 @@
-C:/Users/INTEL/Desktop/Calibration/build/CMakeFiles/Calibration.dir
-C:/Users/INTEL/Desktop/Calibration/build/CMakeFiles/edit_cache.dir
-C:/Users/INTEL/Desktop/Calibration/build/CMakeFiles/rebuild_cache.dir
-C:/Users/INTEL/Desktop/Calibration/build/CMakeFiles/Calibration_autogen.dir

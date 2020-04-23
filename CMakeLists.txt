@@ -30,7 +30,6 @@ set(TS_FILES ${CMAKE_CURRENT_SOURCE_DIR}/translation/Calibration_zh_CN.ts)
 add_executable(Calibration WIN32)
 set_property(TARGET Calibration PROPERTY WIN32_EXECUTABLE true)
 
-
 target_sources(Calibration
                 PUBLIC
                     ${CMAKE_CURRENT_SOURCE_DIR}/include/mainwindow.h
@@ -40,8 +39,6 @@ target_sources(Calibration
                     ${CMAKE_CURRENT_SOURCE_DIR}/src/mainwindow.ui
                     ${CMAKE_CURRENT_SOURCE_DIR}/uiComponents.qrc
                     ${CMAKE_CURRENT_SOURCE_DIR}/app.rc
-
-
                 )
 target_include_directories(Calibration
                             PUBLIC

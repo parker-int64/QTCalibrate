@@ -1,3 +1,4 @@
 # Hashes of file build rules.
+a878cc5047f1a883471a72953f0b6107 ../translation/Calibration_zh_CN.ts
 aadbf3a4c6af0cda99295ed776ad7e28 CMakeFiles/Calibration_autogen
 b474c86503566f7b2a04fb14ac698c91 Calibration_autogen/EWIEGA46WW/qrc_uiComponents.cpp

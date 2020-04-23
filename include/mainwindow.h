@@ -13,6 +13,7 @@
 #include <QScrollBar>
 #include <QDebug>
 #include <QFile>
+#include <QTranslator>
 #include <opencv2/opencv.hpp>
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -29,7 +30,6 @@ public:
     MainWindow(QWidget *parent = nullptr);
     void textOutput(const QString text);
     ~MainWindow();
-
     double computeReprojectionErrors(
             const vector<vector<Point3f> >& objectPoints,
             const vector<vector<Point2f> >& imagePoints,
@@ -72,48 +72,56 @@ public:
 
     int calibMain();
 
-
-
 private:
 
     Ui::MainWindow *ui;
-    std::string frameSource;
-    int cameraIndex;
-    bool enableVideoFile;
-    QString videoFilePath;
-    int imageWidth;
-    int imageHeight;
-    int calibPattern;
-    int chessBoardWidth;
-    int chessBoardHeight;
-    double chessBoardSize;
-    QString outputPath;
-    QUrl folderPath;
-    int numOfFrames;
-    int delayInFrames;
-    int halfSearchWinSize;
-    double actualDistance;
-    bool writeDetectedFeaturePoints;
-    bool writeExtrinsicParameters;
-    bool writeRefined3DObjectPoints;
+    bool enableCamera;
+    QString folderPath;
     bool assumeZeroTangentialDistortion;
-    double fixAspectRatio;
-    bool fixThePrincipalPoint;
-    bool flipTheCapturedImages;
-    bool showUndistortedImages;
+    bool fixedPrincipalPoint;
+
+private:
+    Size boardSize;
+    Size imageSize;
+    float squareSize;
+    float aspectRatio;
+    Mat cameraMatrix;
+    Mat distCoeffs;
+    string outputFilename;
+    string inputFilename;
+    int i;
+    int nframes;
+    bool writeExtrinsics;
+    bool writePoints;
+    bool writeGrid;
+    bool undistortImage;
+    int flags;
+    VideoCapture capture;
+    bool flipVertical;
+    bool showUndistorted;
+    bool videofile;
+    int delay;
+    clock_t prevTimestamp;
+    int mode;
+    int cameraId;
+    vector<vector<Point2f> > imagePoints;
+    vector<string> imageList;
+    Pattern pattern;
+    int winSize;
+    float grid_width;
 
 private:
     void cvCalibParaSetttings();
 public slots:
     void selectDir();
     void selectImageFiles();
-    void selectVideo();
 
 private slots:
     void resetParameters();
     void ShowContextMenu(const QPoint& pos);
     void writeImageList();
     void initCalib();
+    void openHelp();
 
 };
 

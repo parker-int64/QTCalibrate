@@ -9,21 +9,15 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    //
-
-
     // bind buttons
     connect(ui->pushButton_4, SIGNAL(clicked()),    this,SLOT(selectDir()));
     connect(ui->radioButton,  SIGNAL(clicked(bool)),this,SLOT(selectImageFiles()));
-    connect(ui->radioButton_9,SIGNAL(clicked(bool)),this,SLOT(selectVideo()));
     connect(ui->pushButton,   SIGNAL(clicked(bool)),this,SLOT(resetParameters()));
     connect(ui->pushButton_3, SIGNAL(clicked()),    this,SLOT(close()));
     connect(ui->pushButton_5, SIGNAL(clicked()),    this,SLOT(writeImageList()));
     connect(ui->pushButton_2, SIGNAL(clicked()),    this,SLOT(initCalib()));
-
+    connect(ui->pushButton_6,SIGNAL(clicked()),     this,SLOT(switchLanguage()));
     // some default value
-    ui->spinBox_3->setValue(20);
-    ui->spinBox_4->setValue(13);
     ui->spinBox_5->setValue(11);
 
     // init parameters
@@ -43,7 +37,7 @@ void MainWindow::textOutput(const QString text){
  * @ select a directory for xml or yaml output path
 */
 void MainWindow::selectDir(){
-    folderPath = QFileDialog::getExistingDirectoryUrl(this, "Select a file or a folder", QUrl("file:./", QUrl::TolerantMode), QFileDialog::ShowDirsOnly);
+    folderPath = QFileDialog::getExistingDirectory(this, tr("select a directory"),"/",QFileDialog::ShowDirsOnly);
 }
 
 
@@ -77,12 +71,7 @@ void MainWindow::selectImageFiles(){
 }
 
 
-/*
- * @ select a video file from explorer
-*/
-void MainWindow::selectVideo(){
-    videoFilePath = QFileDialog::getOpenFileName(this, tr("Open a Video File"),"./",tr("Videos (*.avi *.mp4 *.mov)"));
-}
+
 
 
 /*
@@ -108,77 +97,68 @@ void MainWindow::ShowContextMenu(const QPoint& pos){
 }
 
 
+void MainWindow::openHelp(){
+
+
+}
 /*
  * @ functions for buttonGroup
  * @ add parameters from selection
 */
 void MainWindow::cvCalibParaSetttings(){
 
-    // initialize some variables
-    enableVideoFile                = false;
-    writeDetectedFeaturePoints     = false;
-    writeExtrinsicParameters       = false;
-    writeRefined3DObjectPoints     = false;
-    assumeZeroTangentialDistortion = false;
-    fixThePrincipalPoint           = false;
-    flipTheCapturedImages          = false;
-    showUndistortedImages          = false;
-
     // selcet video source
-    if(ui->radioButton->isChecked())  frameSource  = "../data/imageList.yml";
-    if(ui->radioButton_7->isChecked())cameraIndex  = 0;
-    if(ui->radioButton_9->isChecked()){
-        frameSource  = videoFilePath.toLocal8Bit().toStdString();
-        enableVideoFile = true;
-    } else enableVideoFile = false;
-
+    if(ui->radioButton->isChecked()){
+        enableCamera = false;
+        inputFilename  = "../data/imagelist.yaml";
+    } else {
+        textOutput(tr("ERROR:Must choose a picture source\n"));
+        return ;
+    }
     // imageWidth & imageHeight
-    if(ui->radioButton_2->isChecked()){imageWidth  = 320; imageHeight  = 240;}
-    if(ui->radioButton_5->isChecked()){imageWidth  = 640; imageHeight  = 480;}
-    if(ui->radioButton_6->isChecked()){imageWidth  = 1280;imageHeight  = 720;}
+    if(ui->radioButton_2->isChecked()){imageSize.width  = 320; imageSize.height  = 240;}
+    if(ui->radioButton_5->isChecked()){imageSize.width  = 640; imageSize.height  = 480;}
+    if(ui->radioButton_6->isChecked()){imageSize.width  = 1280;imageSize.height  = 720;}
 
     // calibrate patterns
-    if(ui->radioButton_3->isChecked())calibPattern = 0;
-    if(ui->radioButton_4->isChecked())calibPattern = 1;
-    if(ui->radioButton_8->isChecked())calibPattern = 2;
+    if(ui->radioButton_3->isChecked())pattern = CHESSBOARD;
+    if(ui->radioButton_4->isChecked())pattern = CIRCLES_GRID;
+    if(ui->radioButton_8->isChecked())pattern = ASYMMETRIC_CIRCLES_GRID;
 
     // chessboard or circle grid width & height & size
-    chessBoardWidth      =     ui->spinBox_2->text().toInt();
-    chessBoardHeight     =     ui->spinBox->text().toInt();
-    chessBoardSize       =     ui->doubleSpinBox->text().toDouble();
+    boardSize.width   = ui->spinBox_2->text().toInt();
+    boardSize.height  = ui->spinBox->text().toInt();
+    squareSize        = (float)ui->doubleSpinBox->text().toDouble();
 
     // output XML or YAML path
-    outputPath           =     folderPath.toString() + "/camera.yml";
-    numOfFrames          =     ui->spinBox_4->text().toInt();
-    delayInFrames        =     ui->spinBox_3->text().toInt();
-    halfSearchWinSize    =     ui->spinBox_5->text().toInt();
-    actualDistance       =     ui->doubleSpinBox_3->text().toDouble();
-    fixAspectRatio       =     ui->doubleSpinBox_2->text().toDouble();
+    winSize     =  ui->spinBox_5->text().toInt();
+//    grid_width  =  (float)ui->doubleSpinBox_3->text().toDouble();
+    aspectRatio =  (float)ui->doubleSpinBox_2->text().toDouble();
 
     // enable or disable some functions
-    writeDetectedFeaturePoints     = ui->checkBox_2->isChecked() ? true : false;
-    writeExtrinsicParameters       = ui->checkBox_3->isChecked() ? true : false;
-    writeRefined3DObjectPoints     = ui->checkBox_4->isChecked() ? true : false;
-    assumeZeroTangentialDistortion = ui->checkBox_5->isChecked() ? true : false;
-    fixThePrincipalPoint           = ui->checkBox_7->isChecked() ? true : false;
-    flipTheCapturedImages          = ui->checkBox_8->isChecked() ? true : false;
-    showUndistortedImages          = ui->checkBox_9->isChecked() ? true : false;
+    writePoints    = ui->checkBox_2->isChecked() ? true : false;
+    writeExtrinsics= ui->checkBox_3->isChecked() ? true : false;
+    writeGrid      = ui->checkBox_4->isChecked() ? true : false;
+    undistortImage = ui->checkBox_5->isChecked() ? true : false;
 
+    fixedPrincipalPoint   = ui->checkBox_7->isChecked() ? true : false;
+    flipVertical          = ui->checkBox_8->isChecked() ? true : false;
+    showUndistorted       = ui->checkBox_9->isChecked() ? true : false;
 
-//    if(imageWidth != 0 || imageHeight != 0 || calibPattern >= 0
-//            || chessBoardSize != 0. || chessBoardWidth != 0 || chessBoardHeight !=0)
-//        ui->pushButton_2->setEnabled(true);
-//    else ui->pushButton_2->setEnabled(false);
+    folderPath.isEmpty() ? outputFilename = "../data/camera.yml" :
+            outputFilename = folderPath.toLocal8Bit().toStdString() + "/camera.yml";
 
+    ui->lineEdit->setText(QString::fromStdString(outputFilename));
 }
 
 /*
  * @ start calibrate...
 */
 void MainWindow::initCalib(){
+    textOutput(tr("[Starting calibration ...]\n"));
     cvCalibParaSetttings();
-    textOutput("Starting calibration ...\n");
     calibMain();
+    textOutput(tr("[End calibration...]\n"));
 }
 
 
@@ -186,14 +166,32 @@ void MainWindow::initCalib(){
  * @ write all images in QListWigets to imageList.yml
 */
 void MainWindow::writeImageList(){
-    if(ui->listWidget->count() == 0)return ;
-    QString line;
-    cv::FileStorage fs("../data/imagelist.yaml",cv::FileStorage::WRITE | cv::FileStorage::APPEND);
-    for(int i = 0; i < ui->listWidget->count();i++){
-        line = ui->listWidget->item(i)->text();
-        fs << "images" << line.toLocal8Bit().toStdString();
-    }
-    fs.release();
+    int count = ui->listWidget->count();
+    if(count == 0)return ;
+
+    string outputname = "../data/imagelist.yaml";
+
+     if (outputname.empty())
+     {
+         textOutput(tr("ERROR:imagelist is empty\n"));
+       return ;
+     }
+
+     Mat m = imread(outputname); //check if the output is an image - prevent overwrites!
+     if(!m.empty()){
+       textOutput(tr("fail! Please specify an output file, don't want to overwrite you images!\n"));
+       return ;
+     }
+
+     FileStorage fs(outputname, FileStorage::WRITE);
+     fs << "images" << "[";
+     for(int i = 0; i < count; i++){
+       fs << ui->listWidget->item(i)->text().toLocal8Bit().toStdString();
+     }
+     fs << "]";
+
+
+
 }
 
 
@@ -201,7 +199,7 @@ void MainWindow::writeImageList(){
  @ clear all and set to default value...
 */
 void MainWindow::resetParameters(){
-    ui->pushButton_2->setEnabled(false);
+    ui->pushButton_2->setEnabled(true);
     ui->checkBox_2->setChecked(false);
     ui->checkBox_3->setChecked(false);
     ui->checkBox_4->setChecked(false);
@@ -211,8 +209,6 @@ void MainWindow::resetParameters(){
     ui->checkBox_9->setChecked(false);
     ui->spinBox->setValue(0);
     ui->spinBox_2->setValue(0);
-    ui->spinBox_3->setValue(20);
-    ui->spinBox_4->setValue(13);
     ui->spinBox_5->setValue(11);
     ui->doubleSpinBox->setValue(0.);
     ui->doubleSpinBox_2->setValue(0.);
@@ -276,7 +272,7 @@ void MainWindow::calcChessboardCorners(Size boardSize, float squareSize, vector<
         break;
 
       default:
-        CV_Error(Error::StsBadArg, "Unknown pattern type\n");
+        textOutput(tr("ERROR:Unknown pattern type\n"));
     }
 }
 
@@ -312,29 +308,25 @@ bool MainWindow::runCalibration( vector<vector<Point2f> > imagePoints,
     rms = calibrateCameraRO(objectPoints, imagePoints, imageSize, iFixedPoint,
                             cameraMatrix, distCoeffs, rvecs, tvecs, newObjPoints,
                             flags | CALIB_FIX_K3 | CALIB_USE_LU);
-    QString rmsStatus;
-    rmsStatus.asprintf("RMS error reported by calibrateCamera: %g\n",rms);
+    qDebug() << "rms = "<< rms;
+    QString rmsStatus = QString(tr("RMS error reported by calibrateCamera: %1\n")).arg(QString::number(rms));
     textOutput(rmsStatus);
 
     bool ok = checkRange(cameraMatrix) && checkRange(distCoeffs);
 
     if (release_object) {
         QString releaseStatus;
-        releaseStatus.asprintf("New board corners:\n"
-                               "[ %.2f, %.2f, %.2f]\n"
-                               "[ %.2f, %.2f, %.2f]\n"
-                               "[ %.2f, %.2f, %.2f]\n"
-                               "[ %.2f, %.2f, %.2f]\n"
-                               ,newObjPoints[0].x,newObjPoints[0].y,newObjPoints[0].z,
-                                newObjPoints[boardSize.width - 1].x,
-                                newObjPoints[boardSize.width - 1].y,
-                                newObjPoints[boardSize.width - 1].z,
-                                newObjPoints[boardSize.width * (boardSize.height - 1)].x,
-                                newObjPoints[boardSize.width * (boardSize.height - 1)].y,
-                                newObjPoints[boardSize.width * (boardSize.height - 1)].z,
-                                newObjPoints.back().x,
-                                newObjPoints.back().y,
-                                newObjPoints.back().z);
+
+        releaseStatus = QString("New board corners:\n"
+                                "%1\n%2\n%3\n%4\n").arg(QString::number(newObjPoints[0].x)+","+
+                QString::number(newObjPoints[0].y)+","+
+                QString::number(newObjPoints[0].z)).arg(QString::number(newObjPoints[boardSize.width - 1].x)+","+
+                QString::number(newObjPoints[boardSize.width - 1].y)+","+
+                QString::number(newObjPoints[boardSize.width - 1].z)).arg(QString::number(newObjPoints[boardSize.width * (boardSize.height - 1)].x)+","+
+                QString::number(newObjPoints[boardSize.width * (boardSize.height - 1)].y)+","+
+                QString::number(newObjPoints[boardSize.width * (boardSize.height - 1)].z)).arg((QString::number(newObjPoints.back().x)+","+
+                                                                                               QString::number(newObjPoints.back().y)+","+
+                                                                                               QString::number(newObjPoints.back().z)));
         textOutput(releaseStatus);
     }
 
@@ -486,9 +478,7 @@ bool MainWindow::runAndSave(const string& outputFilename,
                    aspectRatio, grid_width, release_object, flags, cameraMatrix, distCoeffs,
                    rvecs, tvecs, reprojErrs, newObjPoints, totalAvgErr);
     QString calibrateStatus;
-    calibrateStatus.asprintf("%s. avg reprojection error = %.7f\n",
-                             ok ? "Calibration succeeded" : "Calibration failed",
-                             totalAvgErr);
+    ok ? calibrateStatus = QString(tr("Calibration succeeded with rms %1.\n")).arg(QString::number(totalAvgErr)) : calibrateStatus = QString(tr("Calibration failed.\n"));
     textOutput(calibrateStatus);
     if( ok )
         saveCameraParams( outputFilename, imageSize,
@@ -504,105 +494,58 @@ bool MainWindow::runAndSave(const string& outputFilename,
 }
 
 int MainWindow::calibMain(){
-    Size boardSize, imageSize;
-    float squareSize, aspectRatio = 1;
-    Mat cameraMatrix, distCoeffs;
-    string outputFilename;
-    string inputFilename;
-    int i, nframes;
-    bool writeExtrinsics, writePoints = false;
-    bool undistortImage = false;
-    int flags = 0;
-    VideoCapture capture;
-    bool flipVertical = false;
-    bool showUndistorted = false;
-    bool videofile;
-    int delay;
-    clock_t prevTimestamp = 0;
-    int mode = DETECTION;
-    int cameraId = 0;
-    vector<vector<Point2f> > imagePoints;
-    vector<string> imageList;
-    Pattern pattern = CHESSBOARD;
-    int winSize;
 
-    boardSize.width  = chessBoardWidth;
-    boardSize.height = chessBoardHeight;
+    squareSize = 1.;
+    aspectRatio = 1.;
+    writeExtrinsics = false;
+    writePoints = false;
+    undistortImage = false;
+    flags = 0;
+    flipVertical = false;
+    showUndistorted = false;
+    writeGrid = false;
+    prevTimestamp = 0;
+    mode = DETECTION;
+    cameraId = 0;
+    pattern = CHESSBOARD;
 
-    if(calibPattern == 0)     pattern = CHESSBOARD;
-    else if(calibPattern == 1)pattern = CIRCLES_GRID;
-    else if(calibPattern == 2)pattern = ASYMMETRIC_CIRCLES_GRID;
 
-    if(chessBoardSize != 0.)squareSize = (float)chessBoardSize;
-
-    nframes = numOfFrames;
-
-    delay = delayInFrames;
-
-    writePoints = writeDetectedFeaturePoints;
-
-    writeExtrinsics = writeExtrinsicParameters;
-
-    bool writeGrid = writeRefined3DObjectPoints;
-
-    if(fixAspectRatio != 0.){
+    if(aspectRatio != 0.)
         flags |= CALIB_FIX_ASPECT_RATIO;
-        aspectRatio = (float)fixAspectRatio;
-    }
+    if(assumeZeroTangentialDistortion)
+        flags |= CALIB_ZERO_TANGENT_DIST;
+    if(fixedPrincipalPoint)
+        flags |= CALIB_FIX_PRINCIPAL_POINT;
 
-    if(assumeZeroTangentialDistortion)flags |= CALIB_ZERO_TANGENT_DIST;
-    if(fixThePrincipalPoint)flags |= CALIB_FIX_PRINCIPAL_POINT;
 
-    flipVertical = flipTheCapturedImages;
 
-    if(outputPath != "")outputFilename = outputPath.toLocal8Bit().toStdString();
-    else outputFilename = "../data/camera.yml";
-
-    showUndistortedImages = showUndistorted;
-
-    if(ui->radioButton_7->isChecked())cameraId = 0;
-    else inputFilename = frameSource;
-
-    videofile = enableVideoFile;
-
-    if(halfSearchWinSize != 0)winSize = halfSearchWinSize;
-
-    float grid_width = squareSize * (boardSize.width - 1);
+    grid_width == 0. ? grid_width = squareSize * (boardSize.width - 1) : grid_width;
 
     bool release_object = false;
-
-    if(actualDistance != 0.){
-        grid_width = (float)actualDistance;
-        release_object = true;
-    }
 
 
 
     // some key factors
 
     if ( squareSize <= 0 )
-        return textOutput("ERROR:Invalid board square width\n"),-1;
-    if ( nframes <= 3 )
-        return textOutput("ERROR:Invalid number of images\n"),-1;
+        return textOutput(tr("ERROR:Invalid board square width\n")),-1;
     if ( aspectRatio <= 0 )
-        return textOutput("ERROR:Invalid aspect ratio\n"),-1;
-    if ( delay <= 0 )
-        return textOutput("ERROR:Invalid delay,suggested:50ms\n"), -1;
+        return textOutput(tr("ERROR:Invalid aspect ratio\n")),-1;
     if ( boardSize.width <= 0 )
-        return textOutput("ERROR:Invalid board width\n" ), -1;
+        return textOutput(tr("ERROR:Invalid board width\n") ), -1;
     if ( boardSize.height <= 0 )
-        return textOutput("ERROR:Invalid boadr heigth\n"), -1;
+        return textOutput(tr("ERROR:Invalid boadr heigth\n")), -1;
 
     // handle the frame source
     if( !inputFilename.empty() ){
-        if( !videofile && readStringList(samples::findFile("../data/imagelist.yaml"),imageList)){
+        if( !enableCamera && readStringList(samples::findFile(inputFilename),imageList))
             mode = CAPTURING;
-        }
-        else capture.open(samples::findFileOrKeep(inputFilename));
     }
-    else capture.open(cameraId);
-    if( !capture.isOpened() && imageList.empty())
-        return textOutput("ERROR:Could not initialize webcam capture\n"),-1;
+    else if(enableCamera)
+        capture.open(cameraId);
+    else return textOutput(tr("Must select a picture source...\n")),-1;
+    if(imageList.empty() )
+        return textOutput(tr("ERROR:imagelist.yaml is empty\n")),-1;
     if( !imageList.empty())
         nframes = (int)imageList.size();
 
@@ -631,9 +574,7 @@ int MainWindow::calibMain(){
         if(flipVertical)flip(view,view,0);
 
         vector<Point2f> pointbuf;
-        qDebug() << "Running here..." << endl;
-        if(view.empty())return textOutput("ERROR:view is empty...\n"), -1 ;
-        cvtColor(view, view, COLOR_BGR2GRAY);
+        cvtColor(view, viewGray, COLOR_BGR2GRAY);
 
         bool found;
         switch( pattern ){
@@ -648,11 +589,11 @@ int MainWindow::calibMain(){
             found = findCirclesGrid( view, boardSize, pointbuf, CALIB_CB_ASYMMETRIC_GRID );
             break;
         default:
-            return textOutput("ERROR:Unknown pattern type\n"),-1;
+            return textOutput(tr("ERROR:Unknown pattern type\n")),-1;
         }
 
         // improve the found corners' coordinate accuracy
-        if( pattern == CHESSBOARD && found) cornerSubPix( view, pointbuf, Size(winSize,winSize),
+        if( pattern == CHESSBOARD && found) cornerSubPix( viewGray, pointbuf, Size(winSize,winSize),
                    Size(-1,-1), TermCriteria( TermCriteria::EPS+TermCriteria::COUNT, 30, 0.0001 ));
 
         if( mode == CAPTURING && found &&
@@ -714,9 +655,6 @@ int MainWindow::calibMain(){
                        break;
        }
 
-
-
-
     }
     if(!capture.isOpened() && showUndistorted){
         Mat view, rview, map1, map2;
@@ -731,12 +669,18 @@ int MainWindow::calibMain(){
             char c = (char)waitKey();
             if( c == 27 || c == 'q' || c == 'Q' )break;
         }
+
     }
+    cameraMatrix.release();
+    distCoeffs.release();
+    imagePoints.clear();
+    imageList.clear();
+    destroyAllWindows();
     return 0;
 }
 
 
 void MainWindow::testoutput(){
-    textOutput("Hello there!\n");
+    textOutput(tr("Hello there!\n"));
 }
 
