@@ -1,7 +1,5 @@
 # QTCalibrate
 **废弃仓库**  
-不知道是不是自己qt的问题，跟opencv结合在一起写老是报些莫名其妙的错误。  
-
-之后甚至都无法正常调试。。。。。。  
-
-如果谁有能力可以接着看看……
+可以正常运行了，但是标定结果误差很大  
+应该是运行时设置某些设置不正确
+![运行](https://raw.githubusercontent.com/parker-int64//QTCalibrate/master/data/running.gif)
