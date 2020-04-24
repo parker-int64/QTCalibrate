@@ -4,8 +4,6 @@
 更改了最新设置，应该是开箱即用的标定软件了  
 软件中点击ENG/中以查看中文帮助
 
-![running](https://raw.githubusercontent.com/parker-int64/QTCalibrate/master/data/running.gif)
-
 ## Step 1
 
 ![step1](https://raw.githubusercontent.com/parker-int64/QTCalibrate/master/data/step1.png)
