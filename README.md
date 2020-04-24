@@ -10,7 +10,7 @@
 
 ## Step 2
 
-![step2](https://github.com/parker-int64/QTCalibrate/raw/master/data/step2.png)
+![step2](https://raw.githubusercontent.com/parker-int64/QTCalibrate/master/data/step2.png)
 
 ## Step 3
 
