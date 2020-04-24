@@ -26,7 +26,8 @@ set(EXECUTABLE_OUTPUT_PATH ../bin)
 
 find_package(Qt5 COMPONENTS Widgets LinguistTools REQUIRED)
 find_package(OpenCV REQUIRED)
-set(TS_FILES ${CMAKE_CURRENT_SOURCE_DIR}/translation/Calibration_zh_CN.ts)
+set(TS_FILES ${CMAKE_CURRENT_SOURCE_DIR}/Calibration_zh_CN.ts)
+qt5_create_translation(QM_FILES ${CMAKE_CURRENT_LIST_DIR} ${TS_FILES})
 add_executable(Calibration WIN32)
 set_property(TARGET Calibration PROPERTY WIN32_EXECUTABLE true)
 
@@ -50,4 +51,4 @@ target_link_libraries(Calibration
                             Qt5::Widgets
                             ${OpenCV_LIBS}
                             )
-qt5_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
+

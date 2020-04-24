@@ -17,10 +17,12 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->pushButton_5, SIGNAL(clicked()),    this,SLOT(writeImageList()));
     connect(ui->pushButton_2, SIGNAL(clicked()),    this,SLOT(initCalib()));
     connect(ui->pushButton_6,SIGNAL(clicked()),     this,SLOT(switchLanguage()));
+
+
     // some default value
     ui->spinBox_5->setValue(11);
+    ui->doubleSpinBox_2->setValue(1.);
 
-    // init parameters
 
 }
 
@@ -156,7 +158,6 @@ void MainWindow::cvCalibParaSetttings(){
 */
 void MainWindow::initCalib(){
     textOutput(tr("[Starting calibration ...]\n"));
-    cvCalibParaSetttings();
     calibMain();
     textOutput(tr("[End calibration...]\n"));
 }
@@ -200,6 +201,13 @@ void MainWindow::writeImageList(){
 */
 void MainWindow::resetParameters(){
     ui->pushButton_2->setEnabled(true);
+    ui->radioButton->setChecked(false);
+    ui->radioButton_2->setChecked(false);
+    ui->radioButton_3->setChecked(false);
+    ui->radioButton_4->setChecked(false);
+    ui->radioButton_5->setChecked(false);
+    ui->radioButton_6->setChecked(false);
+    ui->radioButton_8->setChecked(false);
     ui->checkBox_2->setChecked(false);
     ui->checkBox_3->setChecked(false);
     ui->checkBox_4->setChecked(false);
@@ -210,8 +218,8 @@ void MainWindow::resetParameters(){
     ui->spinBox->setValue(0);
     ui->spinBox_2->setValue(0);
     ui->spinBox_5->setValue(11);
-    ui->doubleSpinBox->setValue(0.);
-    ui->doubleSpinBox_2->setValue(0.);
+    ui->doubleSpinBox->setValue(1.);
+    ui->doubleSpinBox_2->setValue(1.);
     ui->doubleSpinBox_3->setValue(0.);
     ui->lineEdit->setText("");
     ui->listWidget->clear();
@@ -495,6 +503,7 @@ bool MainWindow::runAndSave(const string& outputFilename,
 
 int MainWindow::calibMain(){
 
+
     squareSize = 1.;
     aspectRatio = 1.;
     writeExtrinsics = false;
@@ -509,6 +518,7 @@ int MainWindow::calibMain(){
     cameraId = 0;
     pattern = CHESSBOARD;
 
+    cvCalibParaSetttings(); // load parameters
 
     if(aspectRatio != 0.)
         flags |= CALIB_FIX_ASPECT_RATIO;

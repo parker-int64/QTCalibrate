@@ -126,6 +126,7 @@ CMakeFiles/Calibration.dir/Calibration_autogen/mocs_compilation.cpp.obj: C:/Deve
 CMakeFiles/Calibration.dir/Calibration_autogen/mocs_compilation.cpp.obj: C:/Development/opencv411/include/opencv2/videostab/wobble_suppression.hpp
 CMakeFiles/Calibration.dir/Calibration_autogen/mocs_compilation.cpp.obj: C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/QDebug
 CMakeFiles/Calibration.dir/Calibration_autogen/mocs_compilation.cpp.obj: C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/QFile
+CMakeFiles/Calibration.dir/Calibration_autogen/mocs_compilation.cpp.obj: C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/QTranslator
 CMakeFiles/Calibration.dir/Calibration_autogen/mocs_compilation.cpp.obj: C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qabstractitemmodel.h
 CMakeFiles/Calibration.dir/Calibration_autogen/mocs_compilation.cpp.obj: C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qalgorithms.h
 CMakeFiles/Calibration.dir/Calibration_autogen/mocs_compilation.cpp.obj: C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qarraydata.h
@@ -200,6 +201,7 @@ CMakeFiles/Calibration.dir/Calibration_autogen/mocs_compilation.cpp.obj: C:/Qt/Q
 CMakeFiles/Calibration.dir/Calibration_autogen/mocs_compilation.cpp.obj: C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qsystemdetection.h
 CMakeFiles/Calibration.dir/Calibration_autogen/mocs_compilation.cpp.obj: C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qtcore-config.h
 CMakeFiles/Calibration.dir/Calibration_autogen/mocs_compilation.cpp.obj: C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qtextstream.h
+CMakeFiles/Calibration.dir/Calibration_autogen/mocs_compilation.cpp.obj: C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qtranslator.h
 CMakeFiles/Calibration.dir/Calibration_autogen/mocs_compilation.cpp.obj: C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qtypeinfo.h
 CMakeFiles/Calibration.dir/Calibration_autogen/mocs_compilation.cpp.obj: C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qurl.h
 CMakeFiles/Calibration.dir/Calibration_autogen/mocs_compilation.cpp.obj: C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qurlquery.h
@@ -401,6 +403,7 @@ CMakeFiles/Calibration.dir/src/main.cpp.obj: C:/Development/opencv411/include/op
 CMakeFiles/Calibration.dir/src/main.cpp.obj: C:/Development/opencv411/include/opencv2/videostab/wobble_suppression.hpp
 CMakeFiles/Calibration.dir/src/main.cpp.obj: C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/QDebug
 CMakeFiles/Calibration.dir/src/main.cpp.obj: C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/QFile
+CMakeFiles/Calibration.dir/src/main.cpp.obj: C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/QTranslator
 CMakeFiles/Calibration.dir/src/main.cpp.obj: C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qabstractitemmodel.h
 CMakeFiles/Calibration.dir/src/main.cpp.obj: C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qalgorithms.h
 CMakeFiles/Calibration.dir/src/main.cpp.obj: C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qarraydata.h
@@ -475,6 +478,7 @@ CMakeFiles/Calibration.dir/src/main.cpp.obj: C:/Qt/Qt5.14.2/5.14.2/mingw73_64/in
 CMakeFiles/Calibration.dir/src/main.cpp.obj: C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qsystemdetection.h
 CMakeFiles/Calibration.dir/src/main.cpp.obj: C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qtcore-config.h
 CMakeFiles/Calibration.dir/src/main.cpp.obj: C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qtextstream.h
+CMakeFiles/Calibration.dir/src/main.cpp.obj: C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qtranslator.h
 CMakeFiles/Calibration.dir/src/main.cpp.obj: C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qtypeinfo.h
 CMakeFiles/Calibration.dir/src/main.cpp.obj: C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qurl.h
 CMakeFiles/Calibration.dir/src/main.cpp.obj: C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qurlquery.h
@@ -675,6 +679,7 @@ CMakeFiles/Calibration.dir/src/mainwindow.cpp.obj: C:/Development/opencv411/incl
 CMakeFiles/Calibration.dir/src/mainwindow.cpp.obj: C:/Development/opencv411/include/opencv2/videostab/wobble_suppression.hpp
 CMakeFiles/Calibration.dir/src/mainwindow.cpp.obj: C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/QDebug
 CMakeFiles/Calibration.dir/src/mainwindow.cpp.obj: C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/QFile
+CMakeFiles/Calibration.dir/src/mainwindow.cpp.obj: C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/QTranslator
 CMakeFiles/Calibration.dir/src/mainwindow.cpp.obj: C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/QVariant
 CMakeFiles/Calibration.dir/src/mainwindow.cpp.obj: C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qabstractitemmodel.h
 CMakeFiles/Calibration.dir/src/mainwindow.cpp.obj: C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qalgorithms.h
@@ -750,6 +755,7 @@ CMakeFiles/Calibration.dir/src/mainwindow.cpp.obj: C:/Qt/Qt5.14.2/5.14.2/mingw73
 CMakeFiles/Calibration.dir/src/mainwindow.cpp.obj: C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qsystemdetection.h
 CMakeFiles/Calibration.dir/src/mainwindow.cpp.obj: C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qtcore-config.h
 CMakeFiles/Calibration.dir/src/mainwindow.cpp.obj: C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qtextstream.h
+CMakeFiles/Calibration.dir/src/mainwindow.cpp.obj: C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qtranslator.h
 CMakeFiles/Calibration.dir/src/mainwindow.cpp.obj: C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qtypeinfo.h
 CMakeFiles/Calibration.dir/src/mainwindow.cpp.obj: C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qurl.h
 CMakeFiles/Calibration.dir/src/mainwindow.cpp.obj: C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qurlquery.h

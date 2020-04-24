@@ -44,6 +44,7 @@ public:
     QLabel *label_9;
     QWidget *horizontalWidget;
     QHBoxLayout *horizontalLayout;
+    QPushButton *pushButton_6;
     QSpacerItem *horizontalSpacer_2;
     QPushButton *pushButton;
     QSpacerItem *horizontalSpacer_3;
@@ -159,15 +160,40 @@ public:
         horizontalWidget->setStyleSheet(QString::fromUtf8("background-color: rgb(243, 236, 218);"));
         horizontalLayout = new QHBoxLayout(horizontalWidget);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        pushButton_6 = new QPushButton(horizontalWidget);
+        pushButton_6->setObjectName(QString::fromUtf8("pushButton_6"));
+        QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(pushButton_6->sizePolicy().hasHeightForWidth());
+        pushButton_6->setSizePolicy(sizePolicy2);
+        pushButton_6->setStyleSheet(QString::fromUtf8("QPushButton { \n"
+"	font: 14pt \"Microsoft YaHei UI\";\n"
+"	border-radius: 3px;\n"
+"	background-color: rgb(172, 157, 87);\n"
+"	color:rgb(246,245,237); \n"
+"} \n"
+"QPushButton:hover { \n"
+"background-color: rgb(139,126,68); \n"
+"}\n"
+"QPushButton:pressed {  \n"
+"\n"
+"    /* \346\224\271\345\217\230\350\276\271\346\241\206\351\243\216\346\240\274 */  \n"
+"    border-style:inset;  \n"
+"\n"
+"    /* \344\275\277\346\226\207\345\255\227\346\234\211\344\270\200\347\202\271\347\247\273\345\212\250 */  \n"
+"    padding-left:3px;  \n"
+"    padding-top:3px;  \n"
+"}  "));
+
+        horizontalLayout->addWidget(pushButton_6);
+
         horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         horizontalLayout->addItem(horizontalSpacer_2);
 
         pushButton = new QPushButton(horizontalWidget);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Expanding);
-        sizePolicy2.setHorizontalStretch(0);
-        sizePolicy2.setVerticalStretch(0);
         sizePolicy2.setHeightForWidth(pushButton->sizePolicy().hasHeightForWidth());
         pushButton->setSizePolicy(sizePolicy2);
         pushButton->setMaximumSize(QSize(100, 50));
@@ -1167,6 +1193,7 @@ public:
         textBrowser->setToolTip(QString());
 #endif // QT_CONFIG(tooltip)
         label_9->setText(QCoreApplication::translate("MainWindow", "Advanced Calibrate Settings", nullptr));
+        pushButton_6->setText(QCoreApplication::translate("MainWindow", "ENG/\344\270\255", nullptr));
 #if QT_CONFIG(tooltip)
         pushButton->setToolTip(QCoreApplication::translate("MainWindow", "<html><head/><body><p>Reset all parameters above</p></body></html>", nullptr));
 #endif // QT_CONFIG(tooltip)

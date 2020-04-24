@@ -31,6 +31,8 @@ QDebug
 -
 QFile
 -
+QTranslator
+-
 opencv2/opencv.hpp
 -
 
@@ -1264,6 +1266,10 @@ C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/QFile
 qfile.h
 C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qfile.h
 
+C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/QTranslator
+qtranslator.h
+C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qtranslator.h
+
 C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/QVariant
 qvariant.h
 C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qvariant.h
@@ -1952,6 +1958,12 @@ QtCore/qlocale.h
 QtCore/qscopedpointer.h
 -
 stdio.h
+-
+
+C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qtranslator.h
+QtCore/qobject.h
+-
+QtCore/qbytearray.h
 -
 
 C:/Qt/Qt5.14.2/5.14.2/mingw73_64/include/QtCore/qtypeinfo.h
