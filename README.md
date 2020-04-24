@@ -6,11 +6,11 @@
 
 ## Step 1
 
-![step1](https://raw.githubusercontent.com/parker-int64/QTCalibrate/master/data/step1.png)
+![step1](https://github.com/parker-int64/QTCalibrate/raw/master/data/step1.png)
 
 ## Step 2
 
-![step2](https://raw.githubusercontent.com/parker-int64/QTCalibrate/master/data/step2.png)
+![step2](https://github.com/parker-int64/QTCalibrate/raw/master/data/step2.png)
 
 ## Step 3
 
@@ -22,6 +22,6 @@
 
 ## Step 5
 
-![step5](https://raw.githubusercontent.com/parker-int64/QTCalibrate/master/data/step5.png)
+![step5](https://github.com/parker-int64/QTCalibrate/raw/master/data/step5.png)
 
 如果图片查看不了，可以Clone下来打开data下面的step1~step5查看示例。
