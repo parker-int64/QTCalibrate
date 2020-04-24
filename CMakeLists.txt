@@ -34,12 +34,16 @@ set_property(TARGET Calibration PROPERTY WIN32_EXECUTABLE true)
 target_sources(Calibration
                 PUBLIC
                     ${CMAKE_CURRENT_SOURCE_DIR}/include/mainwindow.h
+                    ${CMAKE_CURRENT_SOURCE_DIR}/include/dialog.h
                 PRIVATE
                     ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
                     ${CMAKE_CURRENT_SOURCE_DIR}/src/mainwindow.cpp
+                    ${CMAKE_CURRENT_SOURCE_DIR}/src/dialog.cpp
+                    ${CMAKE_CURRENT_SOURCE_DIR}/src/dialog.ui
                     ${CMAKE_CURRENT_SOURCE_DIR}/src/mainwindow.ui
                     ${CMAKE_CURRENT_SOURCE_DIR}/uiComponents.qrc
                     ${CMAKE_CURRENT_SOURCE_DIR}/app.rc
+
                 )
 target_include_directories(Calibration
                             PUBLIC

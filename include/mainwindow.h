@@ -15,6 +15,7 @@
 #include <QFile>
 #include <QTranslator>
 #include <opencv2/opencv.hpp>
+#include "dialog.h"
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -27,6 +28,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
+    Dialog *dialog;
     MainWindow(QWidget *parent = nullptr);
     void textOutput(const QString text);
     ~MainWindow();

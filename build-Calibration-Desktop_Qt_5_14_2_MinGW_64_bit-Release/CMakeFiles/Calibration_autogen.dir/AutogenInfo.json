@@ -8,6 +8,11 @@
 	"HEADERS" : 
 	[
 		[
+			"C:/Users/INTEL/Desktop/Calibration/include/dialog.h",
+			"MU",
+			"6YEA5652QU/moc_dialog.cpp"
+		],
+		[
 			"C:/Users/INTEL/Desktop/Calibration/include/mainwindow.h",
 			"MU",
 			"6YEA5652QU/moc_mainwindow.cpp"
@@ -66,6 +71,7 @@
 	"SETTINGS_FILE" : "C:/Users/INTEL/Desktop/Calibration/build-Calibration-Desktop_Qt_5_14_2_MinGW_64_bit-Release/CMakeFiles/Calibration_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[ "C:/Users/INTEL/Desktop/Calibration/src/dialog.cpp", "MU" ],
 		[ "C:/Users/INTEL/Desktop/Calibration/src/main.cpp", "MU" ],
 		[ "C:/Users/INTEL/Desktop/Calibration/src/mainwindow.cpp", "MU" ]
 	],

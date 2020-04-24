@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+../include/dialog.h
+QDialog
+-
+
 ../include/mainwindow.h
 QMainWindow
 -
@@ -35,6 +39,8 @@ QTranslator
 -
 opencv2/opencv.hpp
 -
+dialog.h
+../include/dialog.h
 
 C:/Development/opencv411/include/opencv2/calib3d.hpp
 opencv2/core.hpp

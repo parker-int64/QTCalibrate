@@ -198,6 +198,33 @@ app.rc.obj:
 	$(MAKE) -f CMakeFiles\Calibration.dir\build.make CMakeFiles/Calibration.dir/app.rc.obj
 .PHONY : app.rc.obj
 
+src/dialog.obj: src/dialog.cpp.obj
+
+.PHONY : src/dialog.obj
+
+# target to build an object file
+src/dialog.cpp.obj:
+	$(MAKE) -f CMakeFiles\Calibration.dir\build.make CMakeFiles/Calibration.dir/src/dialog.cpp.obj
+.PHONY : src/dialog.cpp.obj
+
+src/dialog.i: src/dialog.cpp.i
+
+.PHONY : src/dialog.i
+
+# target to preprocess a source file
+src/dialog.cpp.i:
+	$(MAKE) -f CMakeFiles\Calibration.dir\build.make CMakeFiles/Calibration.dir/src/dialog.cpp.i
+.PHONY : src/dialog.cpp.i
+
+src/dialog.s: src/dialog.cpp.s
+
+.PHONY : src/dialog.s
+
+# target to generate assembly for a file
+src/dialog.cpp.s:
+	$(MAKE) -f CMakeFiles\Calibration.dir\build.make CMakeFiles/Calibration.dir/src/dialog.cpp.s
+.PHONY : src/dialog.cpp.s
+
 src/main.obj: src/main.cpp.obj
 
 .PHONY : src/main.obj
@@ -269,6 +296,9 @@ help:
 	@echo ... Calibration_autogen/mocs_compilation.i
 	@echo ... Calibration_autogen/mocs_compilation.s
 	@echo ... app.obj
+	@echo ... src/dialog.obj
+	@echo ... src/dialog.i
+	@echo ... src/dialog.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s

@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+
 #include "./ui_mainwindow.h"
 #include <opencv2/opencv.hpp>
 
@@ -16,7 +17,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->pushButton_3, SIGNAL(clicked()),    this,SLOT(close()));
     connect(ui->pushButton_5, SIGNAL(clicked()),    this,SLOT(writeImageList()));
     connect(ui->pushButton_2, SIGNAL(clicked()),    this,SLOT(initCalib()));
-    connect(ui->pushButton_6,SIGNAL(clicked()),     this,SLOT(switchLanguage()));
+    connect(ui->pushButton_6,SIGNAL(clicked()),     this,SLOT(openHelp()));
 
 
     // some default value
@@ -98,10 +99,14 @@ void MainWindow::ShowContextMenu(const QPoint& pos){
     }
 }
 
-
+/*
+ * open help window
+*/
 void MainWindow::openHelp(){
-
-
+    dialog = new Dialog(this);
+    dialog->setWindowTitle("中文帮助说明");
+    dialog->setFixedSize(800,600);
+    dialog->show();
 }
 /*
  * @ functions for buttonGroup
@@ -141,8 +146,7 @@ void MainWindow::cvCalibParaSetttings(){
     writePoints    = ui->checkBox_2->isChecked() ? true : false;
     writeExtrinsics= ui->checkBox_3->isChecked() ? true : false;
     writeGrid      = ui->checkBox_4->isChecked() ? true : false;
-    undistortImage = ui->checkBox_5->isChecked() ? true : false;
-
+    assumeZeroTangentialDistortion = ui->checkBox_5->isChecked()? true : false;
     fixedPrincipalPoint   = ui->checkBox_7->isChecked() ? true : false;
     flipVertical          = ui->checkBox_8->isChecked() ? true : false;
     showUndistorted       = ui->checkBox_9->isChecked() ? true : false;
@@ -316,9 +320,7 @@ bool MainWindow::runCalibration( vector<vector<Point2f> > imagePoints,
     rms = calibrateCameraRO(objectPoints, imagePoints, imageSize, iFixedPoint,
                             cameraMatrix, distCoeffs, rvecs, tvecs, newObjPoints,
                             flags | CALIB_FIX_K3 | CALIB_USE_LU);
-    qDebug() << "rms = "<< rms;
-    QString rmsStatus = QString(tr("RMS error reported by calibrateCamera: %1\n")).arg(QString::number(rms));
-    textOutput(rmsStatus);
+
 
     bool ok = checkRange(cameraMatrix) && checkRange(distCoeffs);
 
@@ -504,7 +506,7 @@ bool MainWindow::runAndSave(const string& outputFilename,
 int MainWindow::calibMain(){
 
 
-    squareSize = 1.;
+
     aspectRatio = 1.;
     writeExtrinsics = false;
     writePoints = false;
@@ -520,7 +522,7 @@ int MainWindow::calibMain(){
 
     cvCalibParaSetttings(); // load parameters
 
-    if(aspectRatio != 0.)
+    if(aspectRatio > 0. && aspectRatio != 1.)
         flags |= CALIB_FIX_ASPECT_RATIO;
     if(assumeZeroTangentialDistortion)
         flags |= CALIB_ZERO_TANGENT_DIST;

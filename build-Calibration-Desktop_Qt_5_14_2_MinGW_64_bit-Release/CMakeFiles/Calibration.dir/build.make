@@ -113,15 +113,29 @@ CMakeFiles/Calibration.dir/src/mainwindow.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Calibration.dir/src/mainwindow.cpp.s"
 	C:\Qt\Qt5.14.2\Tools\mingw730_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\INTEL\Desktop\Calibration\src\mainwindow.cpp -o CMakeFiles\Calibration.dir\src\mainwindow.cpp.s
 
+CMakeFiles/Calibration.dir/src/dialog.cpp.obj: CMakeFiles/Calibration.dir/flags.make
+CMakeFiles/Calibration.dir/src/dialog.cpp.obj: CMakeFiles/Calibration.dir/includes_CXX.rsp
+CMakeFiles/Calibration.dir/src/dialog.cpp.obj: ../src/dialog.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\INTEL\Desktop\Calibration\build-Calibration-Desktop_Qt_5_14_2_MinGW_64_bit-Release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Calibration.dir/src/dialog.cpp.obj"
+	C:\Qt\Qt5.14.2\Tools\mingw730_64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Calibration.dir\src\dialog.cpp.obj -c C:\Users\INTEL\Desktop\Calibration\src\dialog.cpp
+
+CMakeFiles/Calibration.dir/src/dialog.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Calibration.dir/src/dialog.cpp.i"
+	C:\Qt\Qt5.14.2\Tools\mingw730_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\INTEL\Desktop\Calibration\src\dialog.cpp > CMakeFiles\Calibration.dir\src\dialog.cpp.i
+
+CMakeFiles/Calibration.dir/src/dialog.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Calibration.dir/src/dialog.cpp.s"
+	C:\Qt\Qt5.14.2\Tools\mingw730_64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\INTEL\Desktop\Calibration\src\dialog.cpp -o CMakeFiles\Calibration.dir\src\dialog.cpp.s
+
 CMakeFiles/Calibration.dir/app.rc.obj: CMakeFiles/Calibration.dir/flags.make
 CMakeFiles/Calibration.dir/app.rc.obj: ../app.rc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\INTEL\Desktop\Calibration\build-Calibration-Desktop_Qt_5_14_2_MinGW_64_bit-Release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building RC object CMakeFiles/Calibration.dir/app.rc.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\INTEL\Desktop\Calibration\build-Calibration-Desktop_Qt_5_14_2_MinGW_64_bit-Release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building RC object CMakeFiles/Calibration.dir/app.rc.obj"
 	C:\Qt\Qt5.14.2\Tools\mingw730_64\bin\windres.exe -O coff $(RC_DEFINES) $(RC_INCLUDES) $(RC_FLAGS) C:\Users\INTEL\Desktop\Calibration\app.rc CMakeFiles\Calibration.dir\app.rc.obj
 
 CMakeFiles/Calibration.dir/Calibration_autogen/EWIEGA46WW/qrc_uiComponents.cpp.obj: CMakeFiles/Calibration.dir/flags.make
 CMakeFiles/Calibration.dir/Calibration_autogen/EWIEGA46WW/qrc_uiComponents.cpp.obj: CMakeFiles/Calibration.dir/includes_CXX.rsp
 CMakeFiles/Calibration.dir/Calibration_autogen/EWIEGA46WW/qrc_uiComponents.cpp.obj: Calibration_autogen/EWIEGA46WW/qrc_uiComponents.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\INTEL\Desktop\Calibration\build-Calibration-Desktop_Qt_5_14_2_MinGW_64_bit-Release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Calibration.dir/Calibration_autogen/EWIEGA46WW/qrc_uiComponents.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\INTEL\Desktop\Calibration\build-Calibration-Desktop_Qt_5_14_2_MinGW_64_bit-Release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Calibration.dir/Calibration_autogen/EWIEGA46WW/qrc_uiComponents.cpp.obj"
 	C:\Qt\Qt5.14.2\Tools\mingw730_64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Calibration.dir\Calibration_autogen\EWIEGA46WW\qrc_uiComponents.cpp.obj -c C:\Users\INTEL\Desktop\Calibration\build-Calibration-Desktop_Qt_5_14_2_MinGW_64_bit-Release\Calibration_autogen\EWIEGA46WW\qrc_uiComponents.cpp
 
 CMakeFiles/Calibration.dir/Calibration_autogen/EWIEGA46WW/qrc_uiComponents.cpp.i: cmake_force
@@ -137,6 +151,7 @@ Calibration_OBJECTS = \
 "CMakeFiles/Calibration.dir/Calibration_autogen/mocs_compilation.cpp.obj" \
 "CMakeFiles/Calibration.dir/src/main.cpp.obj" \
 "CMakeFiles/Calibration.dir/src/mainwindow.cpp.obj" \
+"CMakeFiles/Calibration.dir/src/dialog.cpp.obj" \
 "CMakeFiles/Calibration.dir/app.rc.obj" \
 "CMakeFiles/Calibration.dir/Calibration_autogen/EWIEGA46WW/qrc_uiComponents.cpp.obj"
 
@@ -146,6 +161,7 @@ Calibration_EXTERNAL_OBJECTS =
 ../bin/Calibration.exe: CMakeFiles/Calibration.dir/Calibration_autogen/mocs_compilation.cpp.obj
 ../bin/Calibration.exe: CMakeFiles/Calibration.dir/src/main.cpp.obj
 ../bin/Calibration.exe: CMakeFiles/Calibration.dir/src/mainwindow.cpp.obj
+../bin/Calibration.exe: CMakeFiles/Calibration.dir/src/dialog.cpp.obj
 ../bin/Calibration.exe: CMakeFiles/Calibration.dir/app.rc.obj
 ../bin/Calibration.exe: CMakeFiles/Calibration.dir/Calibration_autogen/EWIEGA46WW/qrc_uiComponents.cpp.obj
 ../bin/Calibration.exe: CMakeFiles/Calibration.dir/build.make
@@ -203,7 +219,7 @@ Calibration_EXTERNAL_OBJECTS =
 ../bin/Calibration.exe: CMakeFiles/Calibration.dir/linklibs.rsp
 ../bin/Calibration.exe: CMakeFiles/Calibration.dir/objects1.rsp
 ../bin/Calibration.exe: CMakeFiles/Calibration.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\INTEL\Desktop\Calibration\build-Calibration-Desktop_Qt_5_14_2_MinGW_64_bit-Release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable ..\bin\Calibration.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\INTEL\Desktop\Calibration\build-Calibration-Desktop_Qt_5_14_2_MinGW_64_bit-Release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable ..\bin\Calibration.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Calibration.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

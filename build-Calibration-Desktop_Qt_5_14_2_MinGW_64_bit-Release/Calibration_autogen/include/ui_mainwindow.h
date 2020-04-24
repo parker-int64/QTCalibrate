@@ -101,9 +101,9 @@ public:
     QLabel *label_21;
     QMenuBar *menubar;
     QStatusBar *statusbar;
-    QButtonGroup *buttonGroup_2;
     QButtonGroup *buttonGroup;
     QButtonGroup *buttonGroup_3;
+    QButtonGroup *buttonGroup_2;
 
     void setupUi(QMainWindow *MainWindow)
     {

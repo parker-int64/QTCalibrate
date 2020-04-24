@@ -130,7 +130,16 @@
 		<Unit filename="C:/Users/INTEL/Desktop/Calibration/build-Calibration-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/Calibration_autogen/mocs_compilation.cpp">
 			<Option target="Calibration"/>
 		</Unit>
+		<Unit filename="C:/Users/INTEL/Desktop/Calibration/include/dialog.h">
+			<Option target="Calibration"/>
+		</Unit>
 		<Unit filename="C:/Users/INTEL/Desktop/Calibration/include/mainwindow.h">
+			<Option target="Calibration"/>
+		</Unit>
+		<Unit filename="C:/Users/INTEL/Desktop/Calibration/src/dialog.cpp">
+			<Option target="Calibration"/>
+		</Unit>
+		<Unit filename="C:/Users/INTEL/Desktop/Calibration/src/dialog.ui">
 			<Option target="Calibration"/>
 		</Unit>
 		<Unit filename="C:/Users/INTEL/Desktop/Calibration/src/main.cpp">

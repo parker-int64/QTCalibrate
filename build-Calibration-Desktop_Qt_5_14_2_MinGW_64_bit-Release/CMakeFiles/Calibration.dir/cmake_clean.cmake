@@ -9,6 +9,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Calibration.dir/Calibration_autogen/EWIEGA46WW/qrc_uiComponents.cpp.obj"
   "CMakeFiles/Calibration.dir/Calibration_autogen/mocs_compilation.cpp.obj"
   "CMakeFiles/Calibration.dir/app.rc.obj"
+  "CMakeFiles/Calibration.dir/src/dialog.cpp.obj"
   "CMakeFiles/Calibration.dir/src/main.cpp.obj"
   "CMakeFiles/Calibration.dir/src/mainwindow.cpp.obj"
   "Calibration_autogen/EWIEGA46WW/qrc_uiComponents.cpp"

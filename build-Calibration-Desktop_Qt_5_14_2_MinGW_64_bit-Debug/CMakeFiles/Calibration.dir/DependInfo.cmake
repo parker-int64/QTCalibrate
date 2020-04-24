@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/INTEL/Desktop/Calibration/build-Calibration-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/Calibration_autogen/EWIEGA46WW/qrc_uiComponents.cpp" "C:/Users/INTEL/Desktop/Calibration/build-Calibration-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/CMakeFiles/Calibration.dir/Calibration_autogen/EWIEGA46WW/qrc_uiComponents.cpp.obj"
   "C:/Users/INTEL/Desktop/Calibration/build-Calibration-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/Calibration_autogen/mocs_compilation.cpp" "C:/Users/INTEL/Desktop/Calibration/build-Calibration-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/CMakeFiles/Calibration.dir/Calibration_autogen/mocs_compilation.cpp.obj"
+  "C:/Users/INTEL/Desktop/Calibration/src/dialog.cpp" "C:/Users/INTEL/Desktop/Calibration/build-Calibration-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/CMakeFiles/Calibration.dir/src/dialog.cpp.obj"
   "C:/Users/INTEL/Desktop/Calibration/src/main.cpp" "C:/Users/INTEL/Desktop/Calibration/build-Calibration-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/CMakeFiles/Calibration.dir/src/main.cpp.obj"
   "C:/Users/INTEL/Desktop/Calibration/src/mainwindow.cpp" "C:/Users/INTEL/Desktop/Calibration/build-Calibration-Desktop_Qt_5_14_2_MinGW_64_bit-Debug/CMakeFiles/Calibration.dir/src/mainwindow.cpp.obj"
   )
