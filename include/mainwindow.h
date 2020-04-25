@@ -16,6 +16,7 @@
 #include <QTranslator>
 #include <opencv2/opencv.hpp>
 #include "dialog.h"
+#include "form.h"
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -23,12 +24,14 @@ using namespace std;
 using namespace cv;
 enum { DETECTION = 0, CAPTURING = 1, CALIBRATED = 2 };
 enum Pattern { CHESSBOARD, CIRCLES_GRID, ASYMMETRIC_CIRCLES_GRID };
+class Form;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
     Dialog *dialog;
+    Form *form;
     MainWindow(QWidget *parent = nullptr);
     void textOutput(const QString text);
     ~MainWindow();
@@ -77,22 +80,22 @@ public:
 private:
 
     Ui::MainWindow *ui;
-    bool enableCamera;
-    QString folderPath;
+    bool enableCamera;                      // enable camera,this was set to false by default
+    QString folderPath;                     // the path to stroage the camera matrix
     bool assumeZeroTangentialDistortion;
     bool fixedPrincipalPoint;
 
 private:
-    Size boardSize;
-    Size imageSize;
-    float squareSize;
+    Size boardSize;                         // size of a chess board or a circle grid
+    Size imageSize;                         // image size
+    float squareSize;                       // size of a square of a circle grid
     float aspectRatio;
-    Mat cameraMatrix;
-    Mat distCoeffs;
-    string outputFilename;
-    string inputFilename;
+    Mat cameraMatrix;                       // camera matrix
+    Mat distCoeffs;                         // distortion Matrix
+    string outputFilename;                  // the output camera.yml's full path
+    string inputFilename;                   // input path of a imagelist.yaml
     int i;
-    int nframes;
+    int nframes;                            // how many pitcures in total
     bool writeExtrinsics;
     bool writePoints;
     bool writeGrid;
@@ -106,11 +109,11 @@ private:
     clock_t prevTimestamp;
     int mode;
     int cameraId;
-    vector<vector<Point2f> > imagePoints;
-    vector<string> imageList;
-    Pattern pattern;
-    int winSize;
-    float grid_width;
+    vector<vector<Point2f> > imagePoints;   // a vector<vector<Point2f>> for detected image points stroage
+    vector<string> imageList;               // imageList consists full path of the calibrate images,this was read from inputfilename
+    Pattern pattern;                        // calibrate pattern
+    int winSize;                            // corner sub pixels half of serach windows size, the default value is 11
+    float grid_width;                       // actual distance between top-left and top-right corners of the calibration grid.
 
 private:
     void cvCalibParaSetttings();
@@ -124,7 +127,8 @@ private slots:
     void writeImageList();
     void initCalib();
     void openHelp();
-
+    void stereoCalib();
+    void reshow();
 };
 
 #endif // MAINWINDOW_H

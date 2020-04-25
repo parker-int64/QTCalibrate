@@ -102,6 +102,12 @@ background-color: rgb(243, 236, 218);</string>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
+         <property name="maximumSize">
+          <size>
+           <width>100</width>
+           <height>16777215</height>
+          </size>
+         </property>
          <property name="styleSheet">
           <string notr="true">QPushButton { 
 	font: 14pt &quot;Microsoft YaHei UI&quot;;
@@ -128,17 +134,43 @@ QPushButton:pressed {
         </widget>
        </item>
        <item>
-        <spacer name="horizontalSpacer_2">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
+        <widget class="QPushButton" name="pushButton_7">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
          </property>
-         <property name="sizeHint" stdset="0">
+         <property name="maximumSize">
           <size>
-           <width>40</width>
-           <height>20</height>
+           <width>100</width>
+           <height>50</height>
           </size>
          </property>
-        </spacer>
+         <property name="styleSheet">
+          <string notr="true">QPushButton { 
+	font: 14pt &quot;Microsoft YaHei UI&quot;;
+	border-radius: 3px;
+	background-color: rgb(172, 157, 87);
+	color:rgb(246,245,237); 
+} 
+QPushButton:hover { 
+background-color: rgb(139,126,68); 
+}
+QPushButton:pressed {  
+
+    /* 改变边框风格 */  
+    border-style:inset;  
+
+    /* 使文字有一点移动 */  
+    padding-left:3px;  
+    padding-top:3px;  
+}  </string>
+         </property>
+         <property name="text">
+          <string>Stereo</string>
+         </property>
+        </widget>
        </item>
        <item>
         <widget class="QPushButton" name="pushButton">
@@ -181,19 +213,6 @@ QPushButton:pressed {
           <string>Reset</string>
          </property>
         </widget>
-       </item>
-       <item>
-        <spacer name="horizontalSpacer_3">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
        </item>
        <item>
         <widget class="QPushButton" name="pushButton_3">
@@ -1143,14 +1162,14 @@ background-color: rgb(216,212,196);</string>
          <property name="maximumSize">
           <size>
            <width>75</width>
-           <height>25</height>
+           <height>30</height>
           </size>
          </property>
          <property name="cursor">
           <cursorShape>ArrowCursor</cursorShape>
          </property>
          <property name="toolTip">
-          <string extracomment="select the camera martix's output path"/>
+          <string extracomment="select the camera matrices' output path"/>
          </property>
          <property name="styleSheet">
           <string notr="true">QPushButton { 
@@ -1635,7 +1654,7 @@ background-color: rgb(216,212,196);</string>
  <connections/>
  <buttongroups>
   <buttongroup name="buttonGroup"/>
-  <buttongroup name="buttonGroup_3"/>
   <buttongroup name="buttonGroup_2"/>
+  <buttongroup name="buttonGroup_3"/>
  </buttongroups>
 </ui>

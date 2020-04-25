@@ -24,4 +24,14 @@
 
 ![step5](https://github.com/parker-int64/QTCalibrate/raw/master/data/step5.png)
 
+# 新增双目标定
+
+## Steps
+
+![step_stereo](https://raw.githubusercontent.com/parker-int64/QTCalibrate/master/data/stereo_steps.png)
+
+## 运行结果
+
+![running_status](https://raw.githubusercontent.com/parker-int64/QTCalibrate/master/data/stereo_running.png)
+
 如果图片查看不了，可以Clone下来打开data下面的step1~step5查看示例。

@@ -1,8 +1,5 @@
 #include "mainwindow.h"
-
 #include "./ui_mainwindow.h"
-#include <opencv2/opencv.hpp>
-
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -18,12 +15,19 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->pushButton_5, SIGNAL(clicked()),    this,SLOT(writeImageList()));
     connect(ui->pushButton_2, SIGNAL(clicked()),    this,SLOT(initCalib()));
     connect(ui->pushButton_6,SIGNAL(clicked()),     this,SLOT(openHelp()));
-
+    connect(ui->pushButton_7,SIGNAL(clicked()),this,SLOT(stereoCalib()));
 
     // some default value
     ui->spinBox_5->setValue(11);
     ui->doubleSpinBox_2->setValue(1.);
 
+    // load qss
+    QFile qss("../uiComponents/scrollbar.qss");
+    qss.open(QFile::ReadOnly);
+    QString style = qss.readAll();
+    ui->listWidget->verticalScrollBar()->setStyleSheet(style);
+    ui->textBrowser->verticalScrollBar()->setStyleSheet(style);
+    qss.close();
 
 }
 
@@ -45,14 +49,9 @@ void MainWindow::selectDir(){
 
 
 /*
- * @ select image files from explorer
+ * @ select image files from file explorer
 */
 void MainWindow::selectImageFiles(){
-    // load qss
-    QFile qss("../uiComponents/scrollbar.qss");
-    qss.open(QFile::ReadOnly);
-    ui->listWidget->verticalScrollBar()->setStyleSheet(qss.readAll());
-    qss.close();
     QStringList imageList = QFileDialog::getOpenFileNames(this, tr("Select Image Files"),"./",tr("Images (*.png *.xpm *.jpg)")); // choose multip image files
     ui->listWidget->setViewMode(QListView::IconMode);               // set view mode IconMode
     ui->listWidget->setIconSize(QSize(100,100));                    // set a item picture size
@@ -72,8 +71,6 @@ void MainWindow::selectImageFiles(){
         ui->listWidget->addItem(imageItem);                         // add item
     }
 }
-
-
 
 
 
@@ -99,12 +96,14 @@ void MainWindow::ShowContextMenu(const QPoint& pos){
     }
 }
 
+
 /*
- * open help window
+ * open a help window
 */
 void MainWindow::openHelp(){
     dialog = new Dialog(this);
     dialog->setWindowTitle("中文帮助说明");
+    dialog->calibHelp();
     dialog->setFixedSize(800,600);
     dialog->show();
 }
@@ -139,7 +138,7 @@ void MainWindow::cvCalibParaSetttings(){
 
     // output XML or YAML path
     winSize     =  ui->spinBox_5->text().toInt();
-//    grid_width  =  (float)ui->doubleSpinBox_3->text().toDouble();
+    grid_width  =  (float)ui->doubleSpinBox_3->text().toDouble();
     aspectRatio =  (float)ui->doubleSpinBox_2->text().toDouble();
 
     // enable or disable some functions
@@ -157,6 +156,8 @@ void MainWindow::cvCalibParaSetttings(){
     ui->lineEdit->setText(QString::fromStdString(outputFilename));
 }
 
+
+
 /*
  * @ start calibrate...
 */
@@ -168,7 +169,7 @@ void MainWindow::initCalib(){
 
 
 /*
- * @ write all images in QListWigets to imageList.yml
+ * @ write all images in QListWigets to imagelist.yaml
 */
 void MainWindow::writeImageList(){
     int count = ui->listWidget->count();
@@ -201,7 +202,7 @@ void MainWindow::writeImageList(){
 
 
 /*
- @ clear all and set to default value...
+ @ clear all and set all values to default...
 */
 void MainWindow::resetParameters(){
     ui->pushButton_2->setEnabled(true);
@@ -235,6 +236,10 @@ MainWindow::~MainWindow(){
     delete ui;
 }
 
+
+/*
+ * @ a opencv function for compute reprojection errors
+*/
 double MainWindow::computeReprojectionErrors(
         const vector<vector<Point3f> >& objectPoints,
         const vector<vector<Point2f> >& imagePoints,
@@ -262,6 +267,9 @@ double MainWindow::computeReprojectionErrors(
 }
 
 
+/*
+ * @ a opencv function for calculate the chessboard corners
+*/
 void MainWindow::calcChessboardCorners(Size boardSize, float squareSize, vector<Point3f>& corners, Pattern patternType = CHESSBOARD)
 {
     corners.resize(0);
@@ -289,7 +297,9 @@ void MainWindow::calcChessboardCorners(Size boardSize, float squareSize, vector<
 }
 
 
-
+/*
+ * @ a opencv function,run the calibration and calctulate the camera matrices
+*/
 bool MainWindow::runCalibration( vector<vector<Point2f> > imagePoints,
                     Size imageSize, Size boardSize, Pattern patternType,
                     float squareSize, float aspectRatio,
@@ -350,7 +360,9 @@ bool MainWindow::runCalibration( vector<vector<Point2f> > imagePoints,
 
 
 
-
+/*
+ * @ a opencv function,to save all the matrices
+*/
 void MainWindow::saveCameraParams( const string& filename,
                        Size imageSize, Size boardSize,
                        float squareSize, float aspectRatio, int flags,
@@ -437,6 +449,11 @@ void MainWindow::saveCameraParams( const string& filename,
     }
 }
 
+
+
+/*
+* @ a opencv function,read the imagelist.yaml and stroage the full path of calibrate images into imageList.
+*/
 bool MainWindow::readStringList( const string& filename, vector<string>& l )
 {
     l.resize(0);
@@ -472,6 +489,10 @@ bool MainWindow::readStringList( const string& filename, vector<string>& l )
 }
 
 
+
+/*
+ * @ a opencv function,combine the runCalibration and save camera params
+*/
 bool MainWindow::runAndSave(const string& outputFilename,
                 const vector<vector<Point2f> >& imagePoints,
                 Size imageSize, Size boardSize, Pattern patternType, float squareSize,
@@ -503,9 +524,12 @@ bool MainWindow::runAndSave(const string& outputFilename,
     return ok;
 }
 
+
+
+/*
+ * @ this function is the main calibration function,consists reading parameters from UI,calibrating and saving the result
+*/
 int MainWindow::calibMain(){
-
-
 
     aspectRatio = 1.;
     writeExtrinsics = false;
@@ -692,7 +716,35 @@ int MainWindow::calibMain(){
 }
 
 
+
+/*
+ * @ A test function, and also the famous word from Obi-Wang Kenobe, a Jedi master from Star Wars
+*/
 void MainWindow::testoutput(){
     textOutput(tr("Hello there!\n"));
 }
 
+
+
+/*
+ * @ if you push the button 'stereo',it will hide the current window and lead to to stereo calibration
+ *   this is how to do it.
+*/
+void MainWindow::stereoCalib(){
+    form = new Form;
+    form->setFixedSize(800,600);
+    form->setWindowTitle("Stereo Calibrator");
+    form->show();
+    connect(form,SIGNAL(endSignal()),this,SLOT(reshow()));
+    this->hide(); // hide the current window,but not exit because exit would cause expections.
+}
+
+
+/*
+ * @ also,if you clicked the button 'Return to Single Camera Calibration' in the stereo calibration window
+ *   the stereo calibration window will hide and this mainwindow will show itself again.
+ * @ this function has a direction connection with the signal endSingnal() send by the Form window(stereo calibration window)
+*/
+void MainWindow::reshow(){
+    this->show();
+}
