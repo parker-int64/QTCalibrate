@@ -24,7 +24,7 @@
 
 ![step5](https://github.com/parker-int64/QTCalibrate/raw/master/data/step5.png)
 
-# 新增双目标定
+# 新增双目标定(Stereo Calibration)
 
 ## Steps
 
