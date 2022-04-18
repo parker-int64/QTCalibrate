@@ -509,7 +509,7 @@ bool MainWindow::runAndSave(const string& outputFilename,
                    aspectRatio, grid_width, release_object, flags, cameraMatrix, distCoeffs,
                    rvecs, tvecs, reprojErrs, newObjPoints, totalAvgErr);
     QString calibrateStatus;
-    ok ? calibrateStatus = QString(tr("Calibration succeeded with rms %1.\n")).arg(QString::number(totalAvgErr)) : calibrateStatus = QString(tr("Calibration failed.\n"));
+    ok ? calibrateStatus = QString(tr("Calibration succeeded with total average error: %1.\n")).arg(QString::number(totalAvgErr)) : calibrateStatus = QString(tr("Calibration failed.\n"));
     textOutput(calibrateStatus);
     if( ok )
         saveCameraParams( outputFilename, imageSize,
