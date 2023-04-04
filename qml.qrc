@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icons/favicon.ico</file>
+        <file>qml/global/qmldir</file>
+        <file>qml/global/Footer.qml</file>
+        <file>qml/global/Sidebar.qml</file>
+        <file>qml/App.qml</file>
+        <file>qml/page/MainPage.qml</file>
+        <file>qml/page/AboutPage.qml</file>
+        <file>qml/view/Test.qml</file>
+        <file>icons/coord.svg</file>
+        <file>qml/view/V_Home.qml</file>
+        <file>images/bg_mojave.jpg</file>
+        <file>images/cam.svg</file>
+        <file>qml/view/V_2DCoordCalib.qml</file>
+        <file>qml/view/V_3DCoordCalib.qml</file>
+    </qresource>
+</RCC>
