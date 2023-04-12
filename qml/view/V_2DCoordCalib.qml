@@ -5,13 +5,16 @@ import QtQuick.Controls
 import FluentUI
 import Qt.labs.qmlmodels
 
+import Qt.DataTrans 0.1
+
 
 FluScrollablePage {
 
     leftPadding: 10
-    rightPadding: 0
+    rightPadding: 10
     bottomPadding: 20
-    title: "2D坐标系标定"
+    title: "九点手眼标定"
+
 
     ColumnLayout {
 
@@ -19,171 +22,134 @@ FluScrollablePage {
         Layout.fillWidth: true
         Layout.fillHeight: true
 
-        FluText {
-            text: "使用OpenCV的estimateAffine2D函数，计算两个二维点集之间的最佳仿射变换。"
-            fontStyle: FluText.Body
-        }
-
-        FluText {
-            Layout.topMargin: 10
-            text: "第一组点位信息"
-            fontStyle: FluText.Body
-        }
-
-
-        GridLayout {
-            rows: 4
-            columns: 3
-
-            Layout.alignment: Qt.AlignHCenter
+        FluArea {
+            paddings: 10
             Layout.fillWidth: true
-            Layout.fillHeight: true
-
-            FluTextBox {
-                Layout.row: 1
-                Layout.column: 1
-                Layout.topMargin: 10
-                Layout.preferredWidth: 200
-                placeholderText: "第1组，第1个点的X"
-            }
-
-            FluTextBox {
-                Layout.row: 1
-                Layout.column: 2
-                Layout.topMargin: 10
-                Layout.preferredWidth: 200
-                placeholderText: "第1组，第1个点的Y"
-            }
-
-            FluTextBox {
-                Layout.row: 2
-                Layout.column: 1
-                Layout.topMargin: 10
-                Layout.preferredWidth: 200
-                placeholderText: "第1组，第2个点的X"
-            }
-
-            FluTextBox {
-                Layout.row: 2
-                Layout.column: 2
-                Layout.topMargin: 10
-                Layout.preferredWidth: 200
-                placeholderText: "第1组，第2个点的Y"
-            }
-
-            FluTextBox {
-                Layout.row: 3
-                Layout.column: 1
-                Layout.topMargin: 10
-                Layout.preferredWidth: 200
-                placeholderText: "第1组，第3个点的X"
-            }
-
-            FluTextBox {
-                Layout.row: 3
-                Layout.column: 2
-                Layout.topMargin: 10
-                Layout.preferredWidth: 200
-                placeholderText: "第1组，第3个点的Y"
-            }
-
-            FluTextBox {
-                Layout.row: 4
-                Layout.column: 1
-                Layout.topMargin: 10
-                Layout.preferredWidth: 200
-                placeholderText: "第1组，第4个点的X"
-            }
-
-            FluTextBox {
-                Layout.row: 4
-                Layout.column: 2
-                Layout.topMargin: 10
-                Layout.preferredWidth: 200
-                placeholderText: "第1组，第4个点的Y"
+            height: 50
+            FluText {
+                anchors.verticalCenter: parent.verticalCenter
+                text: "使用OpenCV的estimateAffine2D函数，计算两个二维点集之间的最佳仿射变换。"
+                fontStyle: FluText.Body
             }
         }
 
 
 
-        FluText {
-            Layout.topMargin: 10
-            text: "第二组点位信息"
-            fontStyle: FluText.Body
-        }
 
-        GridLayout {
-            rows: 4
-            columns: 3
-            Layout.alignment: Qt.AlignHCenter
+
+        FluArea {
+
+            paddings: 10
             Layout.fillWidth: true
-            Layout.fillHeight: true
+            height: 400
 
-            FluTextBox {
-                Layout.row: 1
-                Layout.column: 1
-                Layout.topMargin: 10
-                Layout.preferredWidth: 200
-                placeholderText: "第2组，第1个点的X"
+
+            FluText {
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: "相机像素点信息"
+                fontStyle: FluText.BodyStrong
             }
 
-            FluTextBox {
-                Layout.row: 1
-                Layout.column: 2
-                Layout.topMargin: 10
-                Layout.preferredWidth: 200
-                placeholderText: "第2组，第1个点的Y"
-            }
 
-            FluTextBox {
-                Layout.row: 2
-                Layout.column: 1
-                Layout.topMargin: 10
-                Layout.preferredWidth: 200
-                placeholderText: "第2组，第2个点的X"
-            }
+            Item {
 
-            FluTextBox {
-                Layout.row: 2
-                Layout.column: 2
-                Layout.topMargin: 10
-                Layout.preferredWidth: 200
-                placeholderText: "第2组，第2个点的Y"
-            }
+                id: inputPoints1
+                anchors.centerIn: parent
+                Layout.fillWidth: true
+                Layout.fillHeight: true
 
-            FluTextBox {
-                Layout.row: 3
-                Layout.column: 1
-                Layout.topMargin: 10
-                Layout.preferredWidth: 200
-                placeholderText: "第2组，第3个点的X"
-            }
+                ColumnLayout {
+                    anchors.centerIn: parent
+                    Layout.alignment: Qt.AlignHCenter
+                    spacing: 10
+                    Layout.fillWidth: true
+                    Layout.leftMargin: 10
 
-            FluTextBox {
-                Layout.row: 3
-                Layout.column: 2
-                Layout.topMargin: 10
-                Layout.preferredWidth: 200
-                placeholderText: "第2组，第3个点的Y"
-            }
+                    Repeater {
+                        id: cameraPointsRepeater
+                        model: 9
+                        delegate: RowLayout {
 
-            FluTextBox {
-                Layout.row: 4
-                Layout.column: 1
-                Layout.topMargin: 10
-                Layout.preferredWidth: 200
-                placeholderText: "第2组，第4个点的X"
-            }
+                            spacing: 10
 
-            FluTextBox {
-                Layout.row: 4
-                Layout.column: 2
-                Layout.topMargin: 10
-                Layout.preferredWidth: 200
-                placeholderText: "第2组，第4个点的Y"
+                            FluText {
+                                Layout.alignment: Qt.AlignVCenter
+                                text: "Point " + (index + 1)
+                            }
+
+                            FluTextBox {
+                                Layout.preferredWidth: 150
+                                placeholderText: "0.000"
+                            }
+
+                            FluTextBox {
+                                Layout.preferredWidth: 150
+                                placeholderText: "0.000"
+                            }
+
+                        }
+                    }
+                }
             }
         }
 
+
+
+        FluArea {
+
+            paddings: 10
+            Layout.fillWidth: true
+            height: 400
+
+
+            FluText {
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: "机器人点位信息"
+                fontStyle: FluText.BodyStrong
+            }
+
+
+            Item {
+
+                id: inputPoints2
+                anchors.centerIn: parent
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+
+                ColumnLayout {
+                    anchors.centerIn: parent
+                    Layout.alignment: Qt.AlignHCenter
+                    spacing: 10
+                    Layout.fillWidth: true
+                    Layout.leftMargin: 10
+
+                    Repeater {
+                        id: robotPointsRepeater
+                        model: 9
+                        delegate: RowLayout {
+
+                            spacing: 10
+
+                            FluText {
+                                Layout.alignment: Qt.AlignVCenter
+                                text: "Point " + (index + 1)
+                            }
+
+                            FluTextBox {
+                                Layout.preferredWidth: 150
+                                placeholderText: "0.000"
+                            }
+
+                            FluTextBox {
+                                Layout.preferredWidth: 150
+                                placeholderText: "0.000"
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
 
         RowLayout {
             id: buttonFuntions
@@ -199,6 +165,7 @@ FluScrollablePage {
                 text: "清除输入"
                 onClicked: {
                     showInfo("已清除")
+                    console.log(_x1.text)
                 }
             }
 
@@ -207,53 +174,57 @@ FluScrollablePage {
                 text: "执行"
                 onClicked: {
                     showInfo("执行中")
-                    resultDialog.open()
+//                    resultDialog.open()
+                    getInputBoxData()
                 }
-            }
-        }
 
 
-        TableView {
+                DataTrans {
+                    id: dataTrans
+                }
 
-            columnSpacing: 1
-            rowSpacing: 1
-            clip: true
+                function getInputBoxData() {
 
-            model: TableModel {
-                TableModelColumn { display: "name" }
-                TableModelColumn { display: "color" }
+                    var data = []
+                    let  rgx = /^[0-9.-]+$/;  // numeric only
 
-                rows: [
-                    {
-                        "name": "cat",
-                        "color": "black"
-                    },
-                    {
-                        "name": "dog",
-                        "color": "brown"
-                    },
-                    {
-                        "name": "bird",
-                        "color": "white"
+                    for(let i = 0; i < 9; i++) {
+
+                        // pointsets 1
+                        let _x1 = cameraPointsRepeater.itemAt(i).children[1].text
+                        let _y1 = cameraPointsRepeater.itemAt(i).children[2].text
+
+                        // pointsets 2
+                        let _x2 = robotPointsRepeater.itemAt(i).children[1].text
+                        let _y2 = robotPointsRepeater.itemAt(i).children[2].text
+
+
+                        // exceptions
+                        if( _x1.length === 0 || _x2.length === 0 || _y1.length === 0 || _y2.length === 0){
+                            showError("输入数据不能为空!")
+                            data = []
+                            break
+                        }
+                        else if ( !rgx.test(_x1) || !rgx.test(_x2) || !rgx.test(_y1) || !rgx.test(_y2)) {
+                            showError("输入仅能包含数字，小数点和负号!")
+                            data = []
+                            break
+                        }
+
+                        // push data
+                        data.push(_x1, _y1, _x2, _y2)
+
                     }
-                ]
-            }
 
-            delegate: Rectangle {
-                implicitWidth: 100
-                implicitHeight: 50
-                border.width: 1
+                    if( data.length !== 0 ){
+                        dataTrans.getDataFromQml(data)
+                    }
 
-                Text {
-                    text: display
-                    anchors.centerIn: parent
                 }
+
             }
         }
-
-
     }
-
 
     property bool resultReady: false
     FluContentDialog {
@@ -267,6 +238,6 @@ FluScrollablePage {
 
 
 
-
-
 }
+
+

@@ -9,7 +9,19 @@ set(CMAKE_CXX_STANDARD 14)
 
 find_package(Qt6 REQUIRED COMPONENTS Quick Core Quick QuickControls2)
 
-set(SOURCES src/main.cpp)
+
+find_package(OpenCV REQUIRED COMPONENTS core calib3d)
+
+include_directories(${OpenCV_INCLUDE_DIRS})
+set(SOURCES
+    src/calibcoord.h
+    src/calibcoord.cpp
+    src/datatrans.h
+    src/datatrans.cpp
+    src/qmltableview.h
+    src/qmltableview.cpp
+    src/main.cpp)
+
 set(RESOURCES qml.qrc)
 set(RC_ICONS icons/favicon.ico)
 
@@ -25,6 +37,7 @@ target_link_libraries(${PROJECT_NAME}
     Qt6::Core
     Qt6::Quick
     Qt6::QuickControls2
+    ${OpenCV_LIBS}
 )
 
 

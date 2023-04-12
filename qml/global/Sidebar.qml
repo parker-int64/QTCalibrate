@@ -40,7 +40,7 @@ FluObject{
         title: "坐标系标定"
         icon: FluentIcons.Add
         FluPaneItem{
-            title:"2D坐标"
+            title:"九点手眼标定"
             onTap:{
                 navigationView.push("qrc:/qml/view/V_2DCoordCalib.qml")
             }
@@ -51,6 +51,16 @@ FluObject{
             onTap:{
                 navigationView.push("qrc:/qml/view/V_3DCoordCalib.qml")
             }
+        }
+    }
+
+
+
+    FluPaneItem{
+        title:"测试页"
+        icon:FluentIcons.Edit
+        onTap:{
+            navigationView.push("qrc:/qml/view/Test.qml")
         }
     }
 

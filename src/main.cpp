@@ -8,6 +8,8 @@
 #include <QVariant>
 #include <QMap>
 
+#include "datatrans.h"
+
 QMap<QString, QVariant> properties(){
     QMap<QString, QVariant> map;
     return map;
@@ -33,6 +35,9 @@ int main(int argc, char *argv[])
 
     // registry the QMap
     engine.rootContext()->setContextProperty("properties",properties());
+
+    qmlRegisterType<DataTrans>("Qt.DataTrans", 0, 1, "DataTrans");
+
     const QUrl url(u"qrc:/qml/App.qml"_qs);
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
         &app, [url](QObject *obj, const QUrl &objUrl) {
