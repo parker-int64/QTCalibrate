@@ -100,6 +100,7 @@ FluScrollablePage {
     Layout.fillHeight: true
     Column {
         Repeater {
+
             model: 5 // 重复创建 5 个 Rectangle
             delegate: Rectangle {
                 property int rectangleIndex: index // 自定义属性，用于存储 Rectangle 的索引

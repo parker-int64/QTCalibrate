@@ -14,5 +14,6 @@
         <file>images/cam.svg</file>
         <file>qml/view/V_2DCoordCalib.qml</file>
         <file>qml/view/V_3DCoordCalib.qml</file>
+        <file>qml/components/DialogBox.qml</file>
     </qresource>
 </RCC>

@@ -17,6 +17,8 @@ Window {
         }
         FluApp.initialRoute = "/"
         FluApp.run()
+
+
     }
 
 }

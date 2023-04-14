@@ -9,6 +9,7 @@
 #include <QMap>
 
 #include "datatrans.h"
+#include "calibcoord.h"
 
 QMap<QString, QVariant> properties(){
     QMap<QString, QVariant> map;
@@ -24,6 +25,8 @@ int main(int argc, char *argv[])
 
     QQmlApplicationEngine engine;
 
+        qmlRegisterType<CalibCoord>("Qt.CalibCoord", 0, 1, "CalibCoord");
+
     QMapIterator<QString, QVariant> iterator(properties());
 
     while (iterator.hasNext()) {
@@ -36,7 +39,7 @@ int main(int argc, char *argv[])
     // registry the QMap
     engine.rootContext()->setContextProperty("properties",properties());
 
-    qmlRegisterType<DataTrans>("Qt.DataTrans", 0, 1, "DataTrans");
+//    qmlRegisterType<DataTrans>("Qt.DataTrans", 0, 1, "DataTrans");
 
     const QUrl url(u"qrc:/qml/App.qml"_qs);
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
