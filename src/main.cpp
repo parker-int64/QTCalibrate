@@ -7,8 +7,6 @@
 #include <QString>
 #include <QVariant>
 #include <QMap>
-
-#include "datatrans.h"
 #include "calibcoord.h"
 
 QMap<QString, QVariant> properties(){

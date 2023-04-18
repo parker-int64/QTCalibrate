@@ -18,35 +18,35 @@ void CalibCoord::calib2D(QVariantList data){
 
     std::vector<cv::Point2f> pointsets2;
 
-    pointsets1 = {
-        cv::Point2f(0, 10),
-        cv::Point2f(0, 4),
-        cv::Point2f(0, 9),
-        cv::Point2f(6 ,0),
-        cv::Point2f(6, 4),
-        cv::Point2f(6, 9),
-        cv::Point2f(11, 0),
-        cv::Point2f(11, 4),
-        cv::Point2f(11, 9)
-    };
-    pointsets2 = {
-        cv::Point2f(603.6,85.8),
-        cv::Point2f(603.6, 4.1),
-        cv::Point2f(603.6, -98.5),
-        cv::Point2f(483.7, 84.8),
-        cv::Point2f(483.7 ,4.6),
-        cv::Point2f(483.7 ,-96.1),
-        cv::Point2f(383.8, 85.1),
-        cv::Point2f(383.8, 4.7),
-        cv::Point2f(383.8 ,-95.3)
-    };
+//    pointsets1 = {
+//        cv::Point2f(0, 10),
+//        cv::Point2f(0, 4),
+//        cv::Point2f(0, 9),
+//        cv::Point2f(6 ,0),
+//        cv::Point2f(6, 4),
+//        cv::Point2f(6, 9),
+//        cv::Point2f(11, 0),
+//        cv::Point2f(11, 4),
+//        cv::Point2f(11, 9)
+//    };
+//    pointsets2 = {
+//        cv::Point2f(603.6,85.8),
+//        cv::Point2f(603.6, 4.1),
+//        cv::Point2f(603.6, -98.5),
+//        cv::Point2f(483.7, 84.8),
+//        cv::Point2f(483.7 ,4.6),
+//        cv::Point2f(483.7 ,-96.1),
+//        cv::Point2f(383.8, 85.1),
+//        cv::Point2f(383.8, 4.7),
+//        cv::Point2f(383.8 ,-95.3)
+//    };
 
-//    for(int i = 0; i < data.size(); i+=4) {
+    for(int i = 0; i < data.size(); i+=4) {
 
-//        pointsets1.push_back(cv::Point2f(data[i].toFloat(), data[i+1].toFloat()));
+        pointsets1.push_back(cv::Point2f(data[i].toFloat(), data[i+1].toFloat()));
 
-//        pointsets2.push_back(cv::Point2f(data[i+2].toFloat(), data[i+3].toFloat()));
-//    }
+        pointsets2.push_back(cv::Point2f(data[i+2].toFloat(), data[i+3].toFloat()));
+    }
 
     try {
         warpMat = cv::estimateAffine2D(pointsets1, pointsets2);
@@ -63,9 +63,7 @@ void CalibCoord::calib2D(QVariantList data){
 
         setCalibResult(tmp); // This will trigger value change
 
-        qDebug() << Qt::endl;
-
-//        emit calibSuccess();
+        emit calibSuccess();
     } catch (...) {
         emit calibError();
     }

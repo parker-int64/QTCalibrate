@@ -33,6 +33,9 @@ signals:
 
     void calibResultChanged(QVariantList result);
 
+
+    void calibSuccess();
+
     void calibError();
 
 

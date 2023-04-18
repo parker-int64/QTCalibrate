@@ -8,12 +8,15 @@
         <file>qml/page/MainPage.qml</file>
         <file>qml/page/AboutPage.qml</file>
         <file>qml/view/Test.qml</file>
-        <file>icons/coord.svg</file>
         <file>qml/view/V_Home.qml</file>
         <file>images/bg_mojave.jpg</file>
         <file>images/cam.svg</file>
         <file>qml/view/V_2DCoordCalib.qml</file>
         <file>qml/view/V_3DCoordCalib.qml</file>
-        <file>qml/components/DialogBox.qml</file>
+        <file>images/affine2D_equ1.png</file>
+        <file>images/affine2D_equ2.png</file>
+        <file>images/qt_logo.png</file>
+        <file>images/opencv_logo.png</file>
+        <file>images/github_logo.png</file>
     </qresource>
 </RCC>

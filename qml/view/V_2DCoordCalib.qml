@@ -6,8 +6,6 @@ import FluentUI
 import Qt.labs.qmlmodels
 import Qt.CalibCoord 0.1
 
-import "qrc:///qml/components"
-
 
 FluScrollablePage {
 
@@ -15,6 +13,11 @@ FluScrollablePage {
     rightPadding: 10
     bottomPadding: 20
     title: "九点手眼标定"
+
+
+    CalibCoord {
+        id: calib
+    }
 
 
     FluPivot {
@@ -51,9 +54,16 @@ FluScrollablePage {
 
 
                     FluText {
+                        id: detailText1
                         anchors.horizontalCenter: parent.horizontalCenter
                         text: "相机像素点信息"
                         fontStyle: FluText.BodyStrong
+                    }
+
+                    FluFilledButton {
+                        id: pointsFromPic
+                        text: "来自于图片(测试中)"
+                        anchors.right: parent.right
                     }
 
 
@@ -92,9 +102,7 @@ FluScrollablePage {
                                         Layout.preferredWidth: 150
                                         placeholderText: "0.000"
                                     }
-
                                 }
-
                             }
                         }
                     }
@@ -189,37 +197,7 @@ FluScrollablePage {
                         }
                     }
 
-                    CalibCoord {
 
-                        id: calib
-
-                        onCalibError: {
-                            showCalibErrorInfo()
-                        }
-
-                        onCalibResultChanged: {
-                            showCalibResult()
-                        }
-
-
-                        function showCalibErrorInfo() {
-                            showError("标定失败，请检查数据是否正确")
-                        }
-
-                        function showCalibResult(){
-                            var data = calib.getCalibResult()
-
-                            for(let i in data){
-                                // TODO Defination probrem
-                                // 定义在这之后的id无法使用
-                                resultRepeater.itemAt(i).children[1].text = data[i]
-
-                            }
-
-                        }
-
-
-                    }
 
                     FluFilledButton {
                         id: exeCalib
@@ -236,41 +214,40 @@ FluScrollablePage {
                             var data = []
                             let  rgx = /^[0-9.-]+$/;  // numeric only
 
-        //                    for(let i = 0; i < 9; i++) {
+                            for(let i = 0; i < 9; i++) {
 
-        //                        // pointsets 1
-        //                        let _x1 = cameraPointsRepeater.itemAt(i).children[1].text
-        //                        let _y1 = cameraPointsRepeater.itemAt(i).children[2].text
+                                // pointsets 1
+                                let _x1 = cameraPointsRepeater.itemAt(i).children[1].text
+                                let _y1 = cameraPointsRepeater.itemAt(i).children[2].text
 
-        //                        // pointsets 2
-        //                        let _x2 = robotPointsRepeater.itemAt(i).children[1].text
-        //                        let _y2 = robotPointsRepeater.itemAt(i).children[2].text
+                                // pointsets 2
+                                let _x2 = robotPointsRepeater.itemAt(i).children[1].text
+                                let _y2 = robotPointsRepeater.itemAt(i).children[2].text
 
 
-        //                        // exceptions
-        //                        if( _x1.length === 0 || _x2.length === 0 || _y1.length === 0 || _y2.length === 0){
-        //                            showError("输入数据不能为空!")
-        //                            data = []
-        //                            break
-        //                        }
-        //                        else if ( !rgx.test(_x1) || !rgx.test(_x2) || !rgx.test(_y1) || !rgx.test(_y2)) {
-        //                            showError("输入仅能包含数字，小数点和负号!")
-        //                            data = []
-        //                            break
-        //                        }
+                                // exceptions
+                                if( _x1.length === 0 || _x2.length === 0 || _y1.length === 0 || _y2.length === 0){
+                                    showError("输入数据不能为空!")
+                                    data = []
+                                    break
+                                }
+                                else if ( !rgx.test(_x1) || !rgx.test(_x2) || !rgx.test(_y1) || !rgx.test(_y2)) {
+                                    showError("输入仅能包含数字，小数点和负号!")
+                                    data = []
+                                    break
+                                }
 
-        //                        // push data
-        //                        data.push(_x1, _y1, _x2, _y2)
+                                // push data
+                                data.push(_x1, _y1, _x2, _y2)
 
-        //                    }
+                            }
 
-        //                    if( data.length !== 0 ){
-        //                        calib.get2DData(data)
-        //                    }
+                            if( data.length !== 0 ){
+                                calib.get2DData(data)
+                            }
 
-                            //Test Only
-                            calib.get2DData(data)
-
+                            // Test
+                            // calib.get2DData(data)
                         }
                     }
                 }
@@ -281,9 +258,65 @@ FluScrollablePage {
             title: "仿射变换矩阵结果"
             contentItem:
             ColumnLayout {
+
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
                 Layout.fillWidth: true
-                height: 300
+                Layout.fillHeight: true
+
+                FluArea {
+                    id: pricinpalHints
+                    Layout.fillWidth: true
+                    paddings: 10
+                    height: 600
+
+
+
+
+                    ColumnLayout {
+                        anchors.fill: parent
+                        Layout.alignment: Qt.AlignHCenter
+                        Layout.fillWidth: true
+                        height: parent.height
+
+                        FluText {
+                            id: principleHints
+                            fontStyle: FluText.Body
+                            wrapMode: Text.WordWrap
+                            text: "计算两组点位之间的变换"
+                        }
+
+
+                        Image{
+                            source: "qrc:/images/affine2D_equ1.png"
+                            Layout.alignment: Qt.AlignHCenter
+                            fillMode: Image.PreserveAspectFit
+                            Layout.preferredWidth: 460
+                            Layout.preferredHeight: 100
+                            mipmap: true
+                            smooth: true
+                        }
+
+
+                        FluText {
+                            text: " 如果无法计算，则输出2 × 3的空矩阵；有结果则按如下形式返回"
+                            fontStyle: FluText.Body
+                            wrapMode: Text.WordWrap
+                        }
+
+
+                        Image{
+                            source: "qrc:/images/affine2D_equ2.png"
+                            Layout.alignment: Qt.AlignHCenter
+                            fillMode: Image.PreserveAspectFit
+                            Layout.preferredWidth: 238
+                            Layout.preferredHeight: 100
+                            mipmap: true
+                            smooth: true
+                        }
+
+                    }
+
+                }
 
                 FluArea {
                     id: hintArea
@@ -298,29 +331,16 @@ FluScrollablePage {
                     }
                 }
 
-                FluArea {
 
+                FluArea {
+                    id: resultBox
                     paddings: 10
 
-                    width: parent.width
-                    height: parent.height
-
-                    FluText {
-                        width: parent.width - 20
-                        id: principleHints
-                        fontStyle: FluText.BodyStrong
-                        wrapMode: Text.WordWrap
-                        Component.onCompleted: {
-                            principleHints.text = "estimateAffine2D Computes an optimal limited affine transformation with 4 degrees of freedom between two 2D point sets. The computed transformation is then refined further (using only inliers) with the Levenberg-Marquardt method to reduce the re-projection error even more."
-                                                + "\n"
-                                                + "Note The RANSAC method can handle practically any ratio of outliers but need a threshold to distinguish inliers from outliers. The method LMeDS does not need any threshold but it works correctly only when there are more than 50% of inliers.\n\n"
-                        }
-                    }
-
+                    Layout.fillWidth: true
+                    height: 300
 
                     ColumnLayout {
-                        anchors.top:  principleHints.bottom
-                        anchors.horizontalCenter: parent.horizontalCenter
+                        anchors.centerIn: parent
                         spacing: 10
                         Layout.fillWidth: true
                         Layout.leftMargin: 10
@@ -336,9 +356,10 @@ FluScrollablePage {
                                     text: "Transformation " + (index + 1) + ":"
                                 }
 
+
                                 FluTextBox {
                                     iconSource: FluentIcons.Copy
-                                    Layout.preferredWidth: 150
+                                    Layout.preferredWidth: 250
                                     placeholderText: "0.000"
                                     selectByMouse: false
                                     MouseArea {
@@ -352,11 +373,36 @@ FluScrollablePage {
                                 }
                             }
                         }
+
+                        Connections {
+                            target: calib
+
+                            function onCalibError() {
+                                showError("标定失败，请检查数据是否正确")
+                            }
+
+                            function onCalibSuccess() {
+                                showSuccess("完成!")
+                                pivotView.currentIndex = 1
+
+                            }
+
+                            function onCalibResultChanged() {
+                                var data = calib.getCalibResult()
+                                for(let i in data){
+                                    resultRepeater.itemAt(i).children[1].text = data[i]
+                                }
+                            }
+                        }
+
                     }
                 }
             }
         }
     }
+
+
+
 }
 
 

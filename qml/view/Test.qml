@@ -95,24 +95,36 @@ import FluentUI
 
 //}
 
-FluScrollablePage {
-    Layout.fillWidth: true
-    Layout.fillHeight: true
-    Column {
-        Repeater {
 
-            model: 5 // 重复创建 5 个 Rectangle
-            delegate: Rectangle {
-                property int rectangleIndex: index // 自定义属性，用于存储 Rectangle 的索引
-                color: "red" // 矩形的颜色，可以根据需要自定义
-                width: 50 // 矩形的宽度，可以根据需要自定义
-                height: 50 // 矩形的高度，可以根据需要自定义
-                MouseArea {
-                    anchors.fill: parent
-                    onClicked: console.log(repeater.itemAt(index).rectangleIndex) // 输出矩形的索引
+FluScrollablePage {
+    id: pageTest
+    title:"FlipView"
+    leftPadding:10
+    rightPadding:10
+    bottomPadding:20
+    spacing: 0
+
+    FluArea{
+        Layout.fillWidth: true
+        height: 800
+        paddings: 10
+        Layout.topMargin: 20
+        ColumnLayout{
+            anchors.verticalCenter: parent.verticalCenter
+            FluText{
+                text:"水平方向的FlipView"
+            }
+            FluFlipView{
+                width: 1200
+                height: 800
+                Image{
+                    source: "qrc:/images/bg_mojave.jpg"
+                    asynchronous: true
+                    fillMode:Image.PreserveAspectCrop
                 }
             }
-            id: repeater // 使用 id 属性为 Repeater 对象分配一个唯一的 ID
         }
     }
+
+
 }

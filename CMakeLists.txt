@@ -16,10 +16,6 @@ include_directories(${OpenCV_INCLUDE_DIRS})
 set(SOURCES
     src/calibcoord.h
     src/calibcoord.cpp
-    src/datatrans.h
-    src/datatrans.cpp
-    src/qmltableview.h
-    src/qmltableview.cpp
     src/main.cpp)
 
 set(RESOURCES qml.qrc)
