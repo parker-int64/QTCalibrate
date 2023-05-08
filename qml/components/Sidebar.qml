@@ -8,11 +8,12 @@ FluObject{
 
     property var navigationView
 
+
     FluPaneItem{
         title:"Home"
         icon:FluentIcons.Home
         onTap:{
-            navigationView.push("qrc:/qml/view/V_Home.qml")
+            navigationView.push("/Calibration/qml/view/V_Home.qml")
         }
     }
 
@@ -23,14 +24,14 @@ FluObject{
         FluPaneItem{
             title:"单目相机"
             onTap:{
-                navigationView.push("qrc:/qml/view/Test.qml")
+                navigationView.push("/Calibration/qml/view/Test.qml")
             }
         }
 
         FluPaneItem{
             title:"双目相机"
             onTap:{
-                navigationView.push("qrc:/qml/view/Test.qml")
+                navigationView.push("/Calibration/qml/view/Test.qml")
             }
         }
     }
@@ -42,14 +43,14 @@ FluObject{
         FluPaneItem{
             title:"九点手眼标定"
             onTap:{
-                navigationView.push("qrc:/qml/view/V_2DCoordCalib.qml")
+                navigationView.push("/Calibration/qml/view/V_2DCoordCalib.qml")
             }
         }
 
         FluPaneItem{
             title:"3D坐标"
             onTap:{
-                navigationView.push("qrc:/qml/view/V_3DCoordCalib.qml")
+                navigationView.push("/Calibration/qml/view/V_3DCoordCalib.qml")
             }
         }
     }
@@ -60,7 +61,16 @@ FluObject{
         title:"测试页"
         icon:FluentIcons.Edit
         onTap:{
-            navigationView.push("qrc:/qml/view/Test.qml")
+            navigationView.push("/Calibration/qml/view/Test.qml")
+        }
+    }
+
+
+    FluPaneItem{
+        title:"设置"
+        icon:FluentIcons.Settings
+        onTap:{
+            navigationView.push("/Calibration/qml/view/Test.qml")
         }
     }
 

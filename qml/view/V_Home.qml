@@ -3,6 +3,7 @@ import QtQuick.Layouts
 import QtQuick.Window
 import QtQuick.Controls
 import FluentUI
+import Calibration
 
 
 FluScrollablePage {
@@ -14,23 +15,13 @@ FluScrollablePage {
     ListModel{
         id: model_header
         ListElement{
-            icon:"qrc:/images/cam.svg"
+            icon:"/images/cam.svg"
             title:"相机标定"
             desc:"快速实现基于OpenCV的单目、双目标定"
             url:"https://github.com"
         }
     }
 
-
-    ListModel{
-        id: model_header2
-        ListElement{
-            icon:"qrc:/images/cam.svg"
-            title:"相机标定"
-            desc:"快速实现基于OpenCV的单目、双目标定"
-            url:"https://github.com"
-        }
-    }
 
     Item {
         id: item1
@@ -40,7 +31,7 @@ FluScrollablePage {
             fillMode: Image.PreserveAspectCrop
             anchors.fill: parent
             verticalAlignment: Qt.AlignTop
-            source: "qrc:/images/bg_mojave.jpg"
+            source: "/images/bg_mojave.jpg"
         }
 
         // Use the rectangle for gradient style

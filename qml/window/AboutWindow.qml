@@ -3,6 +3,7 @@ import QtQuick.Controls
 import QtQuick.Layouts
 import FluentUI
 
+
 FluWindow {
 
     width: 300
@@ -22,7 +23,6 @@ FluWindow {
 
     ColumnLayout{
         Layout.alignment: Qt.AlignCenter
-
 
         RowLayout {
             Layout.alignment: Qt.AlignHCenter
@@ -45,7 +45,7 @@ FluWindow {
                 Layout.alignment: Qt.AlignHCenter
                 Layout.preferredWidth:  64
                 Layout.preferredHeight: 64
-                source: "qrc:/images/qt_logo.png"
+                source: "/images/qt_logo.png"
                 mipmap: true
                 antialiasing: true
                 fillMode: Image.PreserveAspectFit
@@ -61,7 +61,7 @@ FluWindow {
                 Layout.alignment: Qt.AlignHCenter
                 Layout.preferredWidth:  64
                 Layout.preferredHeight: 64
-                source: "qrc:/images/opencv_logo.png"
+                source: "/images/opencv_logo.png"
                 mipmap: true
                 antialiasing: true
                 fillMode: Image.PreserveAspectFit
@@ -92,7 +92,7 @@ FluWindow {
                 Layout.alignment: Qt.AlignHCenter
                 Layout.preferredWidth:  32
                 Layout.preferredHeight: 32
-                source: "qrc:/images/github_logo.png"
+                source: "/images/github_logo.png"
                 mipmap: true
                 antialiasing: true
                 fillMode: Image.PreserveAspectFit

@@ -4,8 +4,7 @@
 #include "qqmlregistration.h"
 #include <QObject>
 #include <QVariantList>
-#include <opencv2/core.hpp>
-#include <opencv2/calib3d.hpp>
+#include "cvfunctions.h"
 
 
 class CalibCoord : public QObject
@@ -14,9 +13,12 @@ class CalibCoord : public QObject
     QML_ELEMENT
 public:
     explicit CalibCoord(QObject *parent = nullptr);
+    ~CalibCoord() = default;
 
 
-    Q_INVOKABLE void get2DData(QVariantList data);
+    Q_INVOKABLE void get2DCalibData(QVariantList data);
+    Q_INVOKABLE void get3DCalibData(QVariantList data);
+
 
     Q_PROPERTY(QVariantList calibResult READ getCalibResult WRITE setCalibResult NOTIFY calibResultChanged);
 
@@ -27,9 +29,11 @@ public:
 
 public slots:
     void calib2D(QVariantList data);
+    void calib3D(QVariantList data);
 
 signals:
-    void sendToCalib2d(QVariantList data);
+    void send2DCalibData(QVariantList data);
+    void send3DCalibData(QVariantList data);
 
     void calibResultChanged(QVariantList result);
 

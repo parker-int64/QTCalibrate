@@ -5,7 +5,8 @@ CalibCoord::CalibCoord(QObject *parent)
     : QObject{parent}
 {
 
-    connect(this, SIGNAL(sendToCalib2d(QVariantList)), this, SLOT(calib2D(QVariantList)));
+    connect(this, SIGNAL(send2DCalibData(QVariantList)), this, SLOT(calib2D(QVariantList)));
+    connect(this, SIGNAL(send3DCalibData(QVariantList)), this, SLOT(calib3D(QVariantList)));
 }
 
 
@@ -49,7 +50,7 @@ void CalibCoord::calib2D(QVariantList data){
     }
 
     try {
-        warpMat = cv::estimateAffine2D(pointsets1, pointsets2);
+        warpMat = cv::estimateAffine2D(pointsets1, pointsets2);  // this estimate function is easy so won't put it into cvfunctions.
 
 
         std::vector<double> res = warpMat.reshape(0,1);
@@ -71,9 +72,26 @@ void CalibCoord::calib2D(QVariantList data){
 }
 
 
-void CalibCoord::get2DData(QVariantList data) {
-    emit sendToCalib2d(data);
+// TODO: add 3D calib method
+void CalibCoord::calib3D(QVariantList data){
+    Q_UNUSED(data);
 }
+
+
+
+void CalibCoord::get2DCalibData(QVariantList data) {
+    emit send2DCalibData(data);
+}
+
+
+
+
+
+// Following methods are used to render data in qml
+void CalibCoord::get3DCalibData(QVariantList data){
+    emit send3DCalibData(data);
+}
+
 
 QVariantList CalibCoord::getCalibResult() const {
     return m_result;
@@ -84,3 +102,8 @@ void CalibCoord::setCalibResult(QVariantList result) {
     m_result = result;
     emit calibResultChanged(result);
 }
+
+
+
+
+

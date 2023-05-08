@@ -2,8 +2,8 @@ import QtQuick
 import QtQuick.Window
 import QtQuick.Controls
 import QtQuick.Layouts
-import "qrc:///qml/global/"
 import FluentUI
+import Calibration
 
 FluWindow {
     id:rootwindow
@@ -20,12 +20,13 @@ FluWindow {
         width:parent.width
     }
 
+
     FluNavigationView{
         id:nav_view
         anchors.fill: parent
         items: Sidebar
         footerItems: Footer
-        logo: "qrc:/icons/favicon.ico"
+        logo: "/icons/favicon.ico"
         z: 11
         title:"CalibrationApp"
         autoSuggestBox:FluAutoSuggestBox{
@@ -39,10 +40,11 @@ FluWindow {
                     Sidebar.startPageByItem(data)
                 }
         }
+
         Component.onCompleted: {
             Sidebar.navigationView = nav_view
             nav_view.setCurrentIndex(0)
-            nav_view.push("qrc:/qml/view/V_Home.qml")
+            nav_view.push("/Calibration/qml/view/V_Home.qml")
         }
     }
 

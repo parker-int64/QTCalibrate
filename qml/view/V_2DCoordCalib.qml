@@ -5,7 +5,7 @@ import QtQuick.Controls
 import FluentUI
 import Qt.labs.qmlmodels
 import Qt.CalibCoord 0.1
-
+import Calibration
 
 FluScrollablePage {
 
@@ -243,11 +243,11 @@ FluScrollablePage {
                             }
 
                             if( data.length !== 0 ){
-                                calib.get2DData(data)
+                                calib.get2DCalibData(data)
                             }
 
                             // Test
-                            // calib.get2DData(data)
+                            // calib.get2DCalibData(data)
                         }
                     }
                 }
