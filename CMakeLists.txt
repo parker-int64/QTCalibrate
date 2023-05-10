@@ -15,6 +15,7 @@ find_package(OpenCV REQUIRED COMPONENTS core calib3d)
 include_directories(./include
     ${OpenCV_INCLUDE_DIRS})
 
+
 set(SOURCES
     include/cvfunctions.h
     include/calibcoord.h
@@ -35,6 +36,8 @@ set(QML_FILES qml/components/Footer.qml
               qml/view/V_2DCoordCalib.qml
               qml/view/V_3DCoordCalib.qml
               qml/view/V_Home.qml
+              qml/view/V_JSONConverter.qml
+              qml/view/V_Settings.qml
               qml/App.qml)
 
 set_source_files_properties(qml/components/Footer.qml

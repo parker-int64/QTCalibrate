@@ -42,6 +42,13 @@ FluObject{
         icon: FluentIcons.Add
         FluPaneItem{
             title:"九点手眼标定"
+            cusIcon: Image{
+                       anchors.centerIn: parent
+                       source: FluTheme.dark ? "/images/circle_grid_icon_dark.svg" :  "/images/circle_grid_icon.svg"
+                       sourceSize: Qt.size(30,30)
+                       width: 18
+                       height: 18
+             }
             onTap:{
                 navigationView.push("/Calibration/qml/view/V_2DCoordCalib.qml")
             }
@@ -49,6 +56,13 @@ FluObject{
 
         FluPaneItem{
             title:"3D坐标"
+            cusIcon: Image{
+                       anchors.centerIn: parent
+                       source: "/images/chessboard_icon.svg"
+                       sourceSize: Qt.size(30,30)
+                       width: 18
+                       height: 18
+             }
             onTap:{
                 navigationView.push("/Calibration/qml/view/V_3DCoordCalib.qml")
             }
@@ -65,12 +79,26 @@ FluObject{
         }
     }
 
+    FluPaneItem{
+        title:"Annotation JSON文件转换"
+        cusIcon: Image{
+                   anchors.centerIn: parent
+                   source:  FluTheme.dark ? "/images/json_icon_dark.svg" : "/images/json_icon.svg"
+                   sourceSize: Qt.size(30,30)
+                   width: 18
+                   height: 18
+         }
+        onTap:{
+            navigationView.push("/Calibration/qml/view/V_JSONConverter.qml")
+        }
+    }
+
 
     FluPaneItem{
         title:"设置"
         icon:FluentIcons.Settings
         onTap:{
-            navigationView.push("/Calibration/qml/view/Test.qml")
+            navigationView.push("/Calibration/qml/view/V_Settings.qml")
         }
     }
 
